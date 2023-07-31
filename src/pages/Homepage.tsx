@@ -4,6 +4,8 @@ import AnimationSection from "./AnimationSection";
 import DropDownSection from "./DropDownSection";
 import Form from "./Form";
 import PaginationSection from "./PaginationSection";
+import NotifySection from "./NotifySection";
+import ScrollSnap from "./ScrollSnap";
 
 
 export default function Homepage() {
@@ -14,6 +16,8 @@ export default function Homepage() {
       <AnimationSection />
       <PaginationSection />
       <PaginationTable data={data} />
+      <NotifySection />
+      <ScrollSnap />
     </div>
   );
 }

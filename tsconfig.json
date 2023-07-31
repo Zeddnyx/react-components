@@ -27,7 +27,7 @@
       "style/*": ["./style/*"],
       "components/*": ["./components/*"],
       "routes/*": ["./routes/*"],
-      "hooks/*": ["./hooks/*"]
+      "hooks/*": ["./hooks/*"],
       "utils/*": ["./utils/*"]
     }
   },

@@ -4,9 +4,26 @@
 
 @layer base {
   button {
-    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-4 mt-3
+    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-4 mt-3;
   }
   h2 {
-    @apply font-bold text-xl
+    @apply font-bold text-xl;
   }
+}
+
+/* Notif Banner */
+.notify {
+  @apply fixed top-10 right-10 w-auto p-2 border rounded-md bg-gray-500 text-[#fff];
+}
+
+/* scroll snap */
+.container-snap {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 40px;
+  @apply flex overflow-x-scroll p-5 w-80 border-4 rounded-md gap-5 mx-auto
+}
+.child-snap {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  @apply bg-gray-500 rounded-md py-16 px-4 cursor-pointer
 }
