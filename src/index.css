@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-4 mt-3
+  }
+  h2 {
+    @apply font-bold text-xl
+  }
+}
