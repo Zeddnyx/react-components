@@ -15,12 +15,9 @@ export default function Dropdown({ data, select, setSelect }: DropdownProps) {
     setIsActive(false);
   };
   return (
-    <div>
-      <div className="dropdown">
-        <button
-          className="outline-none flex items-center gap-2"
-          onClick={() => setIsActive(!isActive)}
-        >
+    <div className="dropdown">
+      <div>
+        <button onClick={() => setIsActive(!isActive)}>
           {/* <span className={isActive ? "" : "rotate-180"}> */}
           {/*   <img className="w-3" src={Arrow} alt="arrow" /> */}
           {/* </span> */}

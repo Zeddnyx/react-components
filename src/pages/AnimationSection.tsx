@@ -3,7 +3,7 @@ import Animation from "components/Animation";
 export default function AnimationSection() {
   return (
     <div>
-      <h2>AnimationSection</h2>
+      <h2>Animation Section</h2>
       <Animation>
         <div>
           <p>1</p>

@@ -6,7 +6,9 @@ import Form from "./Form";
 import PaginationSection from "./PaginationSection";
 import NotifySection from "./NotifySection";
 import ScrollSnap from "./ScrollSnap";
-
+import CopySection from "./CopySection";
+import GeoLocation from "./GeoLocation";
+import MouseTractSection from "./MouseTractSection";
 
 export default function Homepage() {
   return (
@@ -18,6 +20,9 @@ export default function Homepage() {
       <PaginationTable data={data} />
       <NotifySection />
       <ScrollSnap />
+      <CopySection />
+      <GeoLocation />
+      <MouseTractSection />
     </div>
   );
 }

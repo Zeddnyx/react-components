@@ -4,7 +4,7 @@
 
 @layer base {
   button {
-    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-4 mt-3;
+    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-5 mt-3;
   }
   h2 {
     @apply font-bold text-xl;
@@ -26,4 +26,16 @@
   flex: 0 0 100%;
   scroll-snap-align: start;
   @apply bg-gray-500 rounded-md py-16 px-4 cursor-pointer
+}
+
+
+/* dropdown section */
+.dropdown {
+  @apply relative w-20
+}
+.dropdown-content {
+  @apply bg-gray-800 p-3 px-4 rounded-md text-[#fff] mt-1
+}
+.dropdown-item {
+  @apply cursor-pointer
 }

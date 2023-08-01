@@ -4,7 +4,7 @@ import { data } from "utils/dummyData"
 export default function PaginationSection() {
   return (
     <div>
-      <h2>PaginationSection</h2>
+      <h2>Pagination Section</h2>
       <Pagination data={data} />
     </div>
   );

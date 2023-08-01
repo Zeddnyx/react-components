@@ -11,7 +11,7 @@ export default function NotifySection() {
 
   return (
     <div>
-      <h2>NotifySection</h2>
+      <h2>Notify Section</h2>
       <button onClick={handleNotify}>Notif Me</button>
       {isActive && (
           <Notify message="hello thereeee" />

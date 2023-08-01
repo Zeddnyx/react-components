@@ -6,7 +6,7 @@ export default function DropDownSection() {
   const data = ["item 1", "item 2", "item 3"]
   return (
     <div>
-    <h2>DropDownSection</h2>
+    <h2>DropDown Section</h2>
       <Dropdown data={data} select={select} setSelect={setSelect} />
     </div>
   )
