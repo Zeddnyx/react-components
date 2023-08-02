@@ -9,6 +9,7 @@ import ScrollSnap from "./ScrollSnap";
 import CopySection from "./CopySection";
 import GeoLocation from "./GeoLocation";
 import MouseTractSection from "./MouseTractSection";
+import DragFileSection from "./DragFileSection";
 
 export default function Homepage() {
   return (
@@ -23,6 +24,7 @@ export default function Homepage() {
       <CopySection />
       <GeoLocation />
       <MouseTractSection />
+      <DragFileSection />
     </div>
   );
 }
