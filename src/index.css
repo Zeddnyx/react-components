@@ -4,7 +4,7 @@
 
 @layer base {
   button {
-    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-5 mt-3;
+    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-5;
   }
   h2 {
     @apply font-bold text-xl;
@@ -50,7 +50,7 @@
   @apply flex flex-wrap justify-center w-full gap-5 mt-2
 }
 .dropFile-item {
-  @apply w-full h-20 p-1 rounded-md flex justify-between items-center px-5
+  @apply w-full h-16 rounded-md flex justify-between items-center px-2 text-xs
 }
 .btn-dropzone {
   @apply  mt-10 flex justify-center

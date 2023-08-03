@@ -1,28 +1,16 @@
-import { useState, useRef } from "react";
+import { useState, useRef, Fragment } from "react";
 
+// TODO validation if some file is invalid can be added
 export default function DropFile() {
   const [file, setFile] = useState<File[]>([]);
-  const [isErrorType, setIsErrorType] = useState(false);
-  const [isErrorMax, setIsErrorMax] = useState(false);
   const fileSize = 3 * 1024 * 1024; // 3MB
-  const acceptedFileTypes = ["image/jpeg", "image/png"];
+  const acceptedTypes = ["image/jpeg", "image/png"];
   const inputRef = useRef<HTMLInputElement>(null);
 
   // store all files in state
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setFile((prev: File[]) => [...prev, e.dataTransfer.files[0]]);
-
-    let id = 0;
-    for (id; id < file.length; id++) {
-      acceptedFileTypes.includes(file[id].type) && file[id].size <= fileSize
-        ? (setIsErrorType(false),
-          setIsErrorMax(false),
-          console.log("error false"))
-        : (setIsErrorType(true),
-          setIsErrorMax(true),
-          console.log("error true"));
-    }
   };
 
   // handle file choose
@@ -36,9 +24,8 @@ export default function DropFile() {
   };
 
   const handleSubmit = () => {
-    isErrorMax === false && isErrorType === false && file.length > 0
-      ? alert("File Submitted")
-      : null;
+    console.log("Submited file", file);
+    alert("Submited file succes...");
   };
 
   return (
@@ -50,11 +37,9 @@ export default function DropFile() {
           onDragOver={(e) => e.preventDefault()}
         >
           <h2>Drag files here </h2>
-          <button
-            onClick={() => inputRef.current?.click()}
-            className="text-blue-600"
-          >
-            or choose your files
+          <p>or</p>
+          <button onClick={() => inputRef.current?.click()}>
+            choose your files
           </button>
         </div>
         <input
@@ -69,31 +54,36 @@ export default function DropFile() {
       {/* list file section */}
       <div className="dropFile">
         {file?.map((file, index) => (
-          <div
-            key={index}
-            className={`dropFile-item ${
-              !acceptedFileTypes.includes(file.type) || file.size > fileSize
-                ? "bg-red-500"
-                : "bg-gray-500"
-            }`}
+          <Fragment
+            key = { index }
           >
-            <p>{file.name}</p>
-            <div className="grid">
-              <p>
-                {acceptedFileTypes.includes(file.type)
-                  ? ""
-                  : "Invalid file format!"}
-              </p>
-              <p>{file.size <= fileSize ? "" : "Max file size 3MB!"}</p>
-            </div>
-            <button onClick={() => handleDelete(index)}>x</button>
-          </div>
-        ))}
+            < div
+              className = {`dropFile-item ${!acceptedTypes.includes(file.type) || file.size > fileSize
+              ? "bg-red-500"
+              : "bg-green-500"
+            }`}
+            >
+        <p>{file.name}</p>
+        <button onClick={() => handleDelete(index)}>x</button>
       </div>
 
-      <div className="btn-dropzone">
-        <button onClick={handleSubmit}>Submit file</button>
+      {/* error section */}
+      <div className="flex w-full gap-1 text-xs text-red-500">
+        {!acceptedTypes.includes(file.type) ? (
+          <p>Only accept jpeg and png.</p>
+        ) : null}
+        {file.size <= fileSize ? null : <p>Max size 3mb.</p>}
       </div>
+    </Fragment>
+  ))
+}
+      </div >
+
+  <div className="btn-dropzone">
+    <button onClick={handleSubmit} disabled={file.length === 0}>
+      Submit file
+    </button>
+  </div>
     </>
   );
 }
