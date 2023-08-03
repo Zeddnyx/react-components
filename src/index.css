@@ -20,22 +20,38 @@
 .container-snap {
   scroll-snap-type: x mandatory;
   scroll-padding: 40px;
-  @apply flex overflow-x-scroll p-5 w-80 border-4 rounded-md gap-5 mx-auto
+  @apply flex overflow-x-scroll p-5 w-80 border-4 rounded-md gap-5 mx-auto;
 }
 .child-snap {
   flex: 0 0 100%;
   scroll-snap-align: start;
-  @apply bg-gray-500 rounded-md py-16 px-4 cursor-pointer
+  @apply bg-gray-500 rounded-md py-16 px-4 cursor-pointer;
 }
-
 
 /* dropdown section */
 .dropdown {
-  @apply relative w-20
+  @apply relative w-20;
 }
 .dropdown-content {
-  @apply bg-gray-800 p-3 px-4 rounded-md text-[#fff] mt-1
+  @apply bg-gray-800 p-3 px-4 rounded-md text-[#fff] mt-1;
 }
 .dropdown-item {
-  @apply cursor-pointer
+  @apply cursor-pointer;
+}
+
+/* Drag and drop file section  */
+.dropzone {
+  @apply relative w-full p-2 flex justify-center flex-col items-center  h-52;
+}
+.dropzone-content {
+  @apply w-full h-full flex text-center flex-col justify-center items-center gap-1 border-4 border-gray-300 border-dashed rounded-md
+}
+.dropFile {
+  @apply flex flex-wrap justify-center w-full gap-5 mt-2
+}
+.dropFile-item {
+  @apply w-full h-20 p-1 rounded-md flex justify-between items-center px-5
+}
+.btn-dropzone {
+  @apply  mt-10 flex justify-center
 }

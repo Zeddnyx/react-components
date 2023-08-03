@@ -2,19 +2,30 @@ import { useState, useRef } from "react";
 
 export default function DropFile() {
   const [file, setFile] = useState<File[]>([]);
-  const [isError, setIsError] = useState(false);
+  const [isErrorType, setIsErrorType] = useState(false);
+  const [isErrorMax, setIsErrorMax] = useState(false);
   const fileSize = 3 * 1024 * 1024; // 3MB
   const acceptedFileTypes = ["image/jpeg", "image/png"];
-
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // store all files in state
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setFile((prev: File[]) => [...prev, e.dataTransfer.files[0]]);
-    // file[0].size <= fileSize && acceptedFileTypes.includes(file[0].type)
-    // TODO validate file
+
+    let id = 0;
+    for (id; id < file.length; id++) {
+      acceptedFileTypes.includes(file[id].type) && file[id].size <= fileSize
+        ? (setIsErrorType(false),
+          setIsErrorMax(false),
+          console.log("error false"))
+        : (setIsErrorType(true),
+          setIsErrorMax(true),
+          console.log("error true"));
+    }
   };
 
+  // handle file choose
   const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e?.target?.files;
     files ? setFile((prev: File[]) => [...prev, files[0]]) : null;
@@ -25,24 +36,26 @@ export default function DropFile() {
   };
 
   const handleSubmit = () => {
-    console.log(file);
+    isErrorMax === false && isErrorType === false && file.length > 0
+      ? alert("File Submitted")
+      : null;
   };
 
   return (
     <>
-      <div className="relative w-full p-2 flex justify-center flex-col items-center border-4 border-gray-300 border-dashed rounded-md h-40">
+      <div className="dropzone">
         <div
-          className="w-full h-full flex text-center justify-center items-center gap-1 hover:opacity-40"
+          className="dropzone-content"
           onDrop={handleDrop}
           onDragOver={(e) => e.preventDefault()}
         >
-          <p>Drag & Drop files </p>
-          <p
+          <h2>Drag files here </h2>
+          <button
             onClick={() => inputRef.current?.click()}
-            className="cursor-pointer text-blue-600"
+            className="text-blue-600"
           >
-            or click here
-          </p>
+            or choose your files
+          </button>
         </div>
         <input
           type="file"
@@ -53,23 +66,33 @@ export default function DropFile() {
         />
       </div>
 
-      {isError && (
-        <p>Maximum size allowed is 3MB and only accept JPEG and PNG</p>
-      )}
-
-      <div className="flex flex-wrap justify-center w-full gap-2 mt-2">
+      {/* list file section */}
+      <div className="dropFile">
         {file?.map((file, index) => (
-          <div key={index} className="w-20 h-20 bg-gray-300 p-1">
-            <p onClick={() => handleDelete(index)}>x</p>
-            <p className="line-clamp-1">{file.name}</p>
+          <div
+            key={index}
+            className={`dropFile-item ${
+              !acceptedFileTypes.includes(file.type) || file.size > fileSize
+                ? "bg-red-500"
+                : "bg-gray-500"
+            }`}
+          >
+            <p>{file.name}</p>
+            <div className="grid">
+              <p>
+                {acceptedFileTypes.includes(file.type)
+                  ? ""
+                  : "Invalid file format!"}
+              </p>
+              <p>{file.size <= fileSize ? "" : "Max file size 3MB!"}</p>
+            </div>
+            <button onClick={() => handleDelete(index)}>x</button>
           </div>
         ))}
       </div>
 
-      <div>
-        <button onClick={handleSubmit} className={isError ? "hidden" : "block"}>
-          Submit file
-        </button>
+      <div className="btn-dropzone">
+        <button onClick={handleSubmit}>Submit file</button>
       </div>
     </>
   );
