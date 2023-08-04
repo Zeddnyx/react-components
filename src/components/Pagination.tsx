@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
 interface PaginationProps {
   data: any;
 }
 
-export default function Pagination({ data }: PaginationProps) {
+function Pagination({ data }: PaginationProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Number of items per page
 
@@ -68,3 +68,4 @@ export default function Pagination({ data }: PaginationProps) {
     </div>
   );
 }
+export default memo(Pagination)

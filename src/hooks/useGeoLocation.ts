@@ -81,7 +81,8 @@ const useGeolocation = (
         }
       } catch (error) {
         if (getIsMounted()) {
-          setGeoObject(null);
+          // set "useUnknownInCatchVariables": false in tsconfig
+          setGeoObject({ isError: true, message: error.message });
         }
       }
     }

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface Props {
   type: string;
   placeholder: string;
@@ -7,14 +9,7 @@ interface Props {
   isError: string;
 }
 
-export default function Input({
-  type,
-  placeholder,
-  value,
-  onChange,
-  logo,
-  isError,
-}: Props) {
+function Input({ type, placeholder, value, onChange, logo, isError }: Props) {
   return (
     <div className="relative flex flex-col gap-1">
       <div className="relative flex items-center">
@@ -26,10 +21,14 @@ export default function Input({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`${logo ? "pl-7 " : ""} focus:ring-0 outline-none w-full text-sm border p-1 rounded-md`}
+          className={`${
+            logo ? "pl-7 " : ""
+          } focus:ring-0 outline-none w-full text-sm border p-1 rounded-md`}
         />
       </div>
       <p className="text-start text-xs text-red-500">{isError}</p>
     </div>
   );
 }
+
+export default memo(Input);

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 // import Arrow from "/arrow.svg";
 
 interface DropdownProps {
@@ -7,7 +7,7 @@ interface DropdownProps {
   setSelect: any;
 }
 
-export default function Dropdown({ data, select, setSelect }: DropdownProps) {
+function Dropdown({ data, select, setSelect }: DropdownProps) {
   const [isActive, setIsActive] = useState(false);
 
   const handeSelect = (e: string) => {
@@ -40,3 +40,4 @@ export default function Dropdown({ data, select, setSelect }: DropdownProps) {
     </div>
   );
 }
+export default memo(Dropdown);

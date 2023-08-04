@@ -1,7 +1,10 @@
+import { memo } from 'react';
+
 interface IProps {
   text: string;
 }
-export default function Copy({ text }: IProps) {
+function Copy({ text }: IProps) {
+  console.log("render copy");
   const handleCopy = () => {
     if (text.length != 0 || text != undefined) {
       navigator.clipboard.writeText(text);
@@ -17,4 +20,6 @@ export default function Copy({ text }: IProps) {
     </button>
   );
 }
+
+export default memo(Copy);
 
