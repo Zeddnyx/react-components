@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        green: "#4E9F51",
+        blue: "#1D4ED8",
+        red: "#C4180A",
+        gray_alt: "#D1D5D8",
+        gray_cool: "#F9FaFB",
+      },
+    },
   },
   plugins: [],
 };

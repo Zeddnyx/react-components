@@ -18,7 +18,7 @@
     "strict": true,
     "noUnusedLocals": false, // disable error unused variable or import file
     "useUnknownInCatchVariables": false, // disable error unknown catch variable (error is type of unknown)
-    "noUnusedParameters": true,
+    "noUnusedParameters": false, // disable error unused parameter
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src",
     "paths": {

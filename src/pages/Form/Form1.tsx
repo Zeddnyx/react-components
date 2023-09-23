@@ -7,7 +7,7 @@ import {
   USERVALIDATION,
   EMAILVALIDATION,
   PASSVALIDATION,
-} from "../components/Form/regex";
+} from "utils/formValidation";
 
 export default function Form() {
   const [username, setUsername] = useState<string>("");
@@ -34,7 +34,7 @@ export default function Form() {
 
   return (
     <form>
-    <h2>Form Validation</h2>
+      <h2>Form Validation</h2>
       <Input
         logo={"/vite.svg"}
         type="text"

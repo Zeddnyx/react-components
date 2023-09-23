@@ -1,32 +1,45 @@
 import { memo } from "react";
 
-interface Props {
+interface IInput {
   type: string;
   placeholder: string;
+  label?: string;
+  name?: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   logo?: string;
-  isError: string;
+  isDisabled?: boolean;
+  isError?: string;
 }
 
-function Input({ type, placeholder, value, onChange, logo, isError }: Props) {
+function Input({
+  type,
+  placeholder,
+  label,
+  name,
+  value,
+  onChange,
+  logo,
+  isDisabled = false,
+  isError,
+}: IInput) {
   return (
     <div className="relative flex flex-col gap-1">
-      <div className="relative flex items-center"> 
-        {logo && ( 
-          <img src={logo} alt="input logo" className="w-4 h-4 absolute ml-2" /> 
-        )} 
-        <input 
-          type={type} 
-          placeholder={placeholder} 
-          value={value} 
-          onChange={onChange} 
-          className={`${ 
-            logo ? "pl-7 " : "" 
-          } focus:ring-0 outline-none w-full text-sm border p-1 rounded-md`} 
-        /> 
-      </div> 
-      <p className="text-start text-xs text-red-500">{isError}</p>
+      <label htmlFor={name}>{label}</label>
+      <div className="relative flex items-center">
+        {logo && (
+          <img src={logo} alt="input logo" className="w-4 h-4 absolute ml-2" />
+        )}
+        <input
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          disabled={isDisabled}
+          className={`${logo ? "pl-7 " : ""} input`}
+        />
+      </div>
+      <p className="error-input">{isError}</p>
     </div>
   );
 }

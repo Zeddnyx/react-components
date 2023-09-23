@@ -6,17 +6,87 @@
   button {
     @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-5;
   }
-  h2 {
-    @apply font-bold text-xl;
-  }
 }
 
-/* Notif Banner */
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+}
+h2 {
+  font-size: clamp(1rem, 4vw, 2rem);
+  font-weight: 600;
+}
+h3 {
+  font-size: clamp(0.7rem, 4vw, 1.5rem);
+  font-weight: 500;
+}
+h4 {
+  font-size: clamp(0.5rem, 4vw, 1rem);
+  font-weight: 500;
+}
+p {
+  font-size: clamp(0.5rem, 4vw, 0.8rem);
+  font-weight: 400;
+}
+
+/* homepage section */
+.container-home {
+  @apply max-w-7xl mx-auto flex flex-wrap gap-5 md:gap-2 justify-center;
+}
+.item-home {
+  @apply w-96 h-60 flex-1 rounded-md border p-4 cursor-pointer;
+}
+
+/* Sidebar section */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.sidebar {
+  @apply h-full flex gap-2 overflow-y-auto;
+}
+.sidebar-content {
+  flex: 20%;
+  @apply border-r border-gray_alt;
+}
+.logo {
+  @apply h-20 flex justify-center items-center
+}
+.sidebar-item {
+  @apply p-3 px-5 cursor-pointer hover:text-blue hover:border-r-4 hover:border-blue;
+}
+.sidebar-item-active {
+  @apply border-r-4 border-blue text-blue;
+}
+.sidebar-children {
+  @apply w-full;
+}
+.children {
+  @apply px-5
+}
+
+/* input section */
+.input {
+  @apply focus:ring-0 outline-none w-full text-sm p-1 rounded-md bg-gray_cool border border-gray_alt;
+}
+.error-input {
+  @apply text-start text-red;
+}
+
+/* Notif section */
 .notify {
   @apply fixed top-10 right-10 w-auto p-2 border rounded-md bg-gray-500 text-[#fff];
 }
 
-/* scroll snap */
+/* scroll snap section */
 .container-snap {
   scroll-snap-type: x mandatory;
   scroll-padding: 40px;
@@ -44,14 +114,14 @@
   @apply relative w-full p-2 flex justify-center flex-col items-center  h-52;
 }
 .dropzone-content {
-  @apply w-full h-full flex text-center flex-col justify-center items-center gap-1 border-4 border-gray-300 border-dashed rounded-md
+  @apply w-full h-full flex text-center flex-col justify-center items-center gap-1 border-4 border-gray-300 border-dashed rounded-md;
 }
 .dropFile {
-  @apply flex flex-wrap justify-center w-full gap-5 mt-2
+  @apply flex flex-wrap justify-center w-full gap-5 mt-2;
 }
 .dropFile-item {
-  @apply w-full h-16 rounded-md flex justify-between items-center px-2 text-xs
+  @apply w-full h-16 rounded-md flex justify-between items-center px-2 text-xs;
 }
 .btn-dropzone {
-  @apply  mt-10 flex justify-center
+  @apply mt-10 flex justify-center;
 }

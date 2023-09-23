@@ -1,10 +1,13 @@
 import { memo, useState } from "react";
 
-interface PaginationProps {
-  data: any;
+interface IPagination {
+  data: {
+    name: string;
+    id?: number;
+  }[];
 }
 
-function Pagination({ data }: PaginationProps) {
+function Pagination({ data }: IPagination) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Number of items per page
 
@@ -22,16 +25,16 @@ function Pagination({ data }: PaginationProps) {
   };
 
   return (
-    <div>
+    <div className="container-pagination">
       {/* render data */}
-      <div>
-        {pages.map((item: any, id: number) => (
-          <p key={id}>{item.name}</p>
+      <div className="pagination-content">
+        {pages.map((item) => (
+          <p key={item.id}>{item.name}</p>
         ))}
       </div>
 
       {/* pagination */}
-      <div className="flex justify-center pt-5 gap-3">
+      <div className="pagination-button">
         {/* Previous page button */}
         <button
           disabled={currentPage === 1}
@@ -48,8 +51,8 @@ function Pagination({ data }: PaginationProps) {
             onClick={() => handlePageChange(index + 1)}
             className={
               currentPage === index + 1
-                ? "text-gray-100 font-bold text-base"
-                : "text-gray-500 text-xs"
+                ? "pagination-button-active"
+                : "pagination-button-inactive"
             }
           >
             {index + 1}
@@ -68,4 +71,4 @@ function Pagination({ data }: PaginationProps) {
     </div>
   );
 }
-export default memo(Pagination)
+export default memo(Pagination);

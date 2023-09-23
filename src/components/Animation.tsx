@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useAnimation } from "../hooks/useAnimation"
+import { useAnimation } from "hooks/useAnimation"
 
 type Props = {
     children: React.ReactElement

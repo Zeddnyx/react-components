@@ -1,14 +1,10 @@
 import { memo } from "react";
 
-interface INotify {
-  message: string;
-}
-
-function Notify({ message }: INotify) {
+function Notify({ message }: { message: string }) {
   return (
     <div className="notify">
       <p>{message}</p>
     </div>
   );
 }
-export default  memo(Notify)
+export default memo(Notify);

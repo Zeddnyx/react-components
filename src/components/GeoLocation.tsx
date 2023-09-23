@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGeolocation } from "~/hooks/useGeoLocation";
+import { useGeolocation } from "hooks/useGeoLocation";
 
 export default function GeoLocation() {
   const [isActive, setIsActive] = useState(false);
