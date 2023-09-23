@@ -1,60 +1,60 @@
-import Animation from "pages/Animations"
-import Dropdown from "pages/DropDown"
-import FileUploader from "pages/FileUploader"
-import Notify from "pages/Notify"
-import Pagination from "pages/Paginations"
-import Scroll from "pages/Scroll"
-import Copy from "pages/Copy"
-import Form from "pages/Form"
+import Animation from "pages/Animations";
+import Notify from "pages/Notify";
+import Pagination from "pages/Paginations";
+import Scroll from "pages/Scroll";
+import Form from "pages/Form";
 
 export const data = [
   {
     title: "Form input",
     slug: "/form-input",
     image: "",
-    element: Form
-
-  },
-  {
-    title: "Dropdown",
-    slug: "/dropdown",
-    image: "",
-    element: Dropdown
-  },
-  {
-    title: "File uploader",
-    slug: "/file-uploader",
-    image: "",
-    element: FileUploader
+    element: Form,
+    subtitle: [
+      {
+        title: "Form validation",
+        id: "form-validation",
+      },
+      {
+        title: "Form drag and drop multi",
+        id: "form-drag-and-drop-multi",
+      },
+      {
+        title: "Form input copy",
+        id: "form-input-copy",
+      },
+      {
+        title: "Form dropdown",
+        id: "form-dropdown",
+      },
+    ],
   },
   {
     title: "Animation",
     slug: "/animations",
     image: "",
-    element: Animation
+    element: Animation,
+    subtitle: [],
   },
   {
     title: "Notify",
     slug: "/notify",
     image: "",
-    element: Notify
+    element: Notify,
+    subtitle: [],
   },
   {
     title: "Paginations",
     slug: "/paginations",
     image: "",
-    element: Pagination
-  },
-  {
-    title: "Copy text",
-    slug: "/copy-text",
-    image: "",
-    element: Copy
+    element: Pagination,
+    subtitle: [],
   },
   {
     title: "Scroll",
     slug: "/scroll",
     image: "",
-    element: Scroll
+    element: Scroll,
+    subtitle: [],
   },
 ];

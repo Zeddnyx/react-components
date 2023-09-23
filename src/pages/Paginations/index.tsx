@@ -5,7 +5,8 @@ import Pagination2 from "./Pagination2";
 export default function index() {
   return (
     <Sidebar>
-      <div>index</div>
+      <div className="children">
+      index</div>
     </Sidebar>
   );
 }

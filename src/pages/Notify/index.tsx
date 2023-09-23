@@ -4,7 +4,7 @@ import Notif1 from ".//Notify1";
 export default function index() {
   return (
     <Sidebar>
-      <div>
+      <div className="children">
         <Notif1 />
       </div>
     </Sidebar>

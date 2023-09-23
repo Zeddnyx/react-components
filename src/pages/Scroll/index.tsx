@@ -5,7 +5,7 @@ import { data } from "utils/dummyData";
 export default function index() {
   return (
     <Sidebar>
-      <div>
+      <div className="children">
         <Scroll1 data={data} />
       </div>
     </Sidebar>

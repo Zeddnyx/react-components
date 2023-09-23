@@ -1,11 +1,16 @@
-import Sidebar from "~/components/Sidebar";
-import Form1 from "./Form1";
+import Sidebar from "components/Sidebar";
+import { data } from "utils/list-form";
 
 export default function index() {
   return (
     <Sidebar>
-      <div>
-        <Form1 />
+      <div className="children">
+        {data.map((item) => (
+          <div key={item.title} className="children-item" id={`#${item.id}`}>
+            <h2>{item.title}</h2>
+            <item.element />
+          </div>
+        ))}
       </div>
     </Sidebar>
   );

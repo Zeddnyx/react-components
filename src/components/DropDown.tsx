@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { iconArrow } from "utils/images";
+import { iconArrow } from "configs/images";
 
 interface IDropdown {
   data: {
@@ -19,27 +19,25 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
   };
   return (
     <div className="dropdown">
-      <div>
-        <button onClick={() => setIsActive(!isActive)}>
-          {select}
-          <span className={isActive ? "" : "dropdown-active"}>
-            <img className="w-3" src={iconArrow} alt="arrow" /> 
-          </span>
-        </button>
-        {isActive && (
-          <div className="dropdown-content">
-            {data.map((item) => (
-              <div
-                key={item.value}
-                className="dropdown-item"
-                onClick={() => handeSelect(item.name)}
-              >
-                {item.name}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <button onClick={() => setIsActive(!isActive)} className="w-full flex justify-between">
+        <p>{select}</p>
+        <span className={isActive ? "dropdown-active":""}>
+          <img className="w-3" src={iconArrow} alt="arrow" />
+        </span>
+      </button>
+      {isActive && (
+        <div className="dropdown-content">
+          {data.map((item) => (
+            <div
+              key={item.value}
+              className="dropdown-item"
+              onClick={() => handeSelect(item.name)}
+            >
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -36,7 +36,7 @@ function Input({
           value={value}
           onChange={onChange}
           disabled={isDisabled}
-          className={`${logo ? "pl-7 " : ""} input`}
+          className={`${logo && "pl-7"} input`}
         />
       </div>
       <p className="error-input">{isError}</p>

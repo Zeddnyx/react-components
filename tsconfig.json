@@ -29,6 +29,7 @@
       "components/*": ["./components/*"],
       "routes/*": ["./routes/*"],
       "hooks/*": ["./hooks/*"],
+      "configs/*": ["./configs/*"],
       "utils/*": ["./utils/*"]
     }
   },

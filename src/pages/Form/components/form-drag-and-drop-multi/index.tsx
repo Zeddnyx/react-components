@@ -59,8 +59,8 @@ export default function DropFile() {
           >
             < div
               className = {`dropFile-item ${!acceptedTypes.includes(file.type) || file.size > fileSize
-              ? "bg-red-500"
-              : "bg-green-500"
+              ? "bg-red"
+              : "bg-green"
             }`}
             >
         <p>{file.name}</p>

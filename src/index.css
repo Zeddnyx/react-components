@@ -4,7 +4,7 @@
 
 @layer base {
   button {
-    @apply outline-none ring-0 flex justify-center items-center text-center p-1 bg-gray-800 text-[#fff] rounded-md px-5;
+    @apply outline-none ring-0 flex justify-center items-center text-center p-2 bg-gray text-[#fff] rounded-md px-5;
   }
 }
 
@@ -63,6 +63,9 @@ p {
 .sidebar-item {
   @apply p-3 px-5 cursor-pointer hover:text-blue hover:border-r-4 hover:border-blue;
 }
+.sidebar-subtitle {
+  @apply px-2 mt-3
+}
 .sidebar-item-active {
   @apply border-r-4 border-blue text-blue;
 }
@@ -70,12 +73,15 @@ p {
   @apply w-full;
 }
 .children {
-  @apply px-5
+  @apply px-5 grid gap-5
+}
+.children-item {
+  @apply border-b-2 py-10
 }
 
 /* input section */
 .input {
-  @apply focus:ring-0 outline-none w-full text-sm p-1 rounded-md bg-gray_cool border border-gray_alt;
+  @apply focus:ring-0 outline-none w-full text-sm p-2 rounded-md bg-gray_alt border border-gray_alt;
 }
 .error-input {
   @apply text-start text-red;
@@ -83,7 +89,7 @@ p {
 
 /* Notif section */
 .notify {
-  @apply fixed top-10 right-10 w-auto p-2 border rounded-md bg-gray-500 text-[#fff];
+  @apply fixed top-10 right-10 w-auto p-2 border rounded-md bg-gray text-[#fff];
 }
 
 /* scroll snap section */
@@ -95,18 +101,21 @@ p {
 .child-snap {
   flex: 0 0 100%;
   scroll-snap-align: start;
-  @apply bg-gray-500 rounded-md py-16 px-4 cursor-pointer;
+  @apply bg-gray rounded-md py-16 px-4 cursor-pointer;
 }
 
 /* dropdown section */
 .dropdown {
-  @apply relative w-20;
+  @apply relative w-36 max-h-40 text-start
 }
 .dropdown-content {
-  @apply bg-gray-800 p-3 px-4 rounded-md text-[#fff] mt-1;
+  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden mt-2
 }
 .dropdown-item {
   @apply cursor-pointer;
+}
+.dropdown-active{
+  @apply rotate-180
 }
 
 /* Drag and drop file section  */
@@ -114,7 +123,7 @@ p {
   @apply relative w-full p-2 flex justify-center flex-col items-center  h-52;
 }
 .dropzone-content {
-  @apply w-full h-full flex text-center flex-col justify-center items-center gap-1 border-4 border-gray-300 border-dashed rounded-md;
+  @apply w-full h-full flex text-center flex-col justify-center items-center gap-1 border-4 border-gray border-dashed rounded-md;
 }
 .dropFile {
   @apply flex flex-wrap justify-center w-full gap-5 mt-2;
