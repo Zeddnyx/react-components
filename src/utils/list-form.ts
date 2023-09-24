@@ -2,6 +2,7 @@ import FormValidation from "pages/Form/components/form-validation";
 import FormDragAndDropMulti from "pages/Form/components/form-drag-and-drop-multi";
 import FormInputCopy from "pages/Form/components/form-input-copy";
 import FormDropdown from "pages/Form/components/form-dropdown";
+import FormDynamicAdd from "pages/Form/components/form-dynamic-add";
 
 export const data = [
   {
@@ -23,5 +24,10 @@ export const data = [
     title: "Form dropdown",
     id: "form-dropdown",
     element: FormDropdown,
+  },
+  {
+    title: "Form dynamic add",
+    id: "form-dynamic-add",
+    element: FormDynamicAdd,
   },
 ];

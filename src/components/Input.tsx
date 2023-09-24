@@ -33,6 +33,7 @@ function Input({
         <input
           type={type}
           placeholder={placeholder}
+          name={name}
           value={value}
           onChange={onChange}
           disabled={isDisabled}

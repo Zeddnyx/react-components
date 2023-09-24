@@ -16,9 +16,8 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
           return (
             <Link to={item.slug} key={item.title}>
               <div
-                className={`sidebar-item ${
-                  pathname.includes(item.slug) && "sidebar-item-active"
-                }`}
+                className={`sidebar-item ${pathname.includes(item.slug) && "sidebar-item-active"
+                  }`}
               >
                 <p onClick={() => setIsActive(!isActive)}>{item.title}</p>
                 {isActive &&

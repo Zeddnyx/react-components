@@ -1,9 +1,15 @@
 import { memo } from "react";
 
-function Notify({ message }: { message: string }) {
+interface INotify {
+  message: string;
+  bg?: string;
+  color?: string;
+}
+
+function Notify({ message, bg = "#3e3e3e", color = "#fff" }: INotify) {
   return (
-    <div className="notify">
-      <p>{message}</p>
+    <div className="notify" style={{ background: bg }}>
+      <p style={{ color }}>{message}</p>
     </div>
   );
 }

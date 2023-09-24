@@ -1,9 +1,10 @@
 import Sidebar from "~/components/Sidebar";
-import {data} from "utils/list-pagination"
+import { data } from "utils/list-modal";
 
 export default function index() {
   return (
     <Sidebar>
+      <div className="children">
         {data.map((item) => {
           return (
             <div key={item.title} className="children-item" id={`#${item.id}`}>
@@ -12,6 +13,7 @@ export default function index() {
             </div>
           );
         })}
+      </div>
     </Sidebar>
   );
 }

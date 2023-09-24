@@ -1,8 +1,15 @@
 import Animation from "pages/Animations";
-import Notify from "pages/Notify";
+import Modal from "pages/Modal";
 import Pagination from "pages/Paginations";
 import Scroll from "pages/Scroll";
 import Form from "pages/Form";
+
+//* subtitle list
+import { data as form } from "./list-form";
+import { data as animation} from "./list-animation";
+import { data as modal } from "./list-modal";
+import { data as pagination} from "./list-pagination";
+import { data as scroll} from "./list-scroll";
 
 export const data = [
   {
@@ -10,51 +17,34 @@ export const data = [
     slug: "/form-input",
     image: "",
     element: Form,
-    subtitle: [
-      {
-        title: "Form validation",
-        id: "form-validation",
-      },
-      {
-        title: "Form drag and drop multi",
-        id: "form-drag-and-drop-multi",
-      },
-      {
-        title: "Form input copy",
-        id: "form-input-copy",
-      },
-      {
-        title: "Form dropdown",
-        id: "form-dropdown",
-      },
-    ],
+    subtitle: form,
   },
   {
     title: "Animation",
     slug: "/animations",
     image: "",
     element: Animation,
-    subtitle: [],
+    subtitle: animation,
   },
   {
-    title: "Notify",
-    slug: "/notify",
+    title: "Modal",
+    slug: "/modal",
     image: "",
-    element: Notify,
-    subtitle: [],
+    element: Modal,
+    subtitle: modal,
   },
   {
     title: "Paginations",
     slug: "/paginations",
     image: "",
     element: Pagination,
-    subtitle: [],
+    subtitle: pagination,
   },
   {
     title: "Scroll",
     slug: "/scroll",
     image: "",
     element: Scroll,
-    subtitle: [],
+    subtitle: scroll,
   },
 ];

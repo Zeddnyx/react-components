@@ -21,8 +21,6 @@ export default function PaginationTable() {
 
   return (
     <div className="container-pagination-table">
-      <h2>Pagination Table</h2>
-
       {/* render data */}
       <div className="pagination-table-content">
         <Table data={pages} />
@@ -32,7 +30,7 @@ export default function PaginationTable() {
         <button
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
-          className="text-gray-500"
+          className="text-gray_cool"
         >
           Prev
         </button>
@@ -54,7 +52,7 @@ export default function PaginationTable() {
         <button
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(currentPage + 1)}
-          className="text-gray-500"
+          className="text-gray_cool"
         >
           Next
         </button>
