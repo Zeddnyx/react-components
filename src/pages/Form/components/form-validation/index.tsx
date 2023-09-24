@@ -37,7 +37,7 @@ export default function Form() {
   return (
     <form className="grid gap-2">
       <Input
-        logo={"/vite.svg"}
+        logo={"/icons/logo.svg"}
         type="text"
         placeholder="Username"
         value={form.username}

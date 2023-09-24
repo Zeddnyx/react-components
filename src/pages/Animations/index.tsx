@@ -1,13 +1,15 @@
 import Sidebar from "~/components/Sidebar";
-import {data } from "utils/list-animation"
+import { data } from "utils/list-animation";
 
 export default function index() {
   return (
     <Sidebar>
       <div className="children">
-        {data.map((item) => (
+        {data.map((item, id) => (
           <div key={item.title} className="children-item" id={`#${item.id}`}>
-            <h2>{item.title}</h2>
+            <h3>
+              {id + 1}. {item.title}
+            </h3>
             <item.element />
           </div>
         ))}

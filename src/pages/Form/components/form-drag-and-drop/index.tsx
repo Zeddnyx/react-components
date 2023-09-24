@@ -1,31 +1,31 @@
-import { useState, useRef, Fragment } from "react";
+import { useState, useRef } from "react";
 
 export default function DropFile() {
-  const [file, setFile] = useState<File[]>([]);
+  const [file, setFile] = useState<File | null>();
+  const [iDisable, setIDisable] = useState(false)
   const fileSize = 3 * 1024 * 1024; // 3MB
   const acceptedTypes = ["image/jpeg", "image/png"];
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // store all files in state
+  // store files in state
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
-    setFile((prev: File[]) => [...prev, e.dataTransfer.files[0]]);
+    setFile(e.dataTransfer.files[0]);
   };
 
   // handle file choose
   const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e?.target?.files;
-    files ? setFile((prev: File[]) => [...prev, files[0]]) : null;
+    files ? setFile(files[0]) : null;
   };
 
-  const handleDelete = (id: number) => {
-    setFile((prev: File[]) => prev.filter((_, index) => index !== id));
+  const handleDelete = () => {
+    setFile(null);
   };
 
   const handleSubmit = () => {
-    // TODO pass the id of the file not add manualy using 0
-    if (!acceptedTypes.includes(file[0].type) || file[0].size > fileSize) {
-      return;
+    if (!acceptedTypes.includes(file!.type) || file!.size > fileSize) {
+      return
     }
     console.log("Submited file", file);
     alert("Submited file succes...");
@@ -56,8 +56,8 @@ export default function DropFile() {
 
       {/* list file section */}
       <div className="dropFile">
-        {file?.map((file, index) => (
-          <Fragment key={index}>
+        {file && (
+          <>
             <div
               className={`dropFile-item ${!acceptedTypes.includes(file.type) || file.size > fileSize
                   ? "bg-red"
@@ -65,7 +65,7 @@ export default function DropFile() {
                 }`}
             >
               <p>{file.name}</p>
-              <button onClick={() => handleDelete(index)}>x</button>
+              <button onClick={() => handleDelete()}>x</button>
             </div>
 
             {/* error section */}
@@ -75,14 +75,14 @@ export default function DropFile() {
               ) : null}
               {file.size <= fileSize ? null : <p>Max size 3mb.</p>}
             </div>
-          </Fragment>
-        ))}
-      </div>
+          </>
+        )}
 
-      <div className="btn-dropzone">
-        <button onClick={handleSubmit} disabled={file.length === 0}>
-          Submit file
-        </button>
+        <div className="btn-dropzone">
+          <button onClick={handleSubmit} disabled={!file}>
+            Submit file
+          </button>
+        </div>
       </div>
     </>
   );
