@@ -11,22 +11,27 @@
 h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 h2 {
   font-size: clamp(1rem, 4vw, 2rem);
   font-weight: 600;
+  font-family: "Poppins", sans-serif;
 }
 h3 {
   font-size: clamp(0.7rem, 4vw, 1.5rem);
   font-weight: 500;
+  font-family: "Poppins", sans-serif;
 }
 h4 {
   font-size: clamp(0.5rem, 4vw, 1rem);
   font-weight: 500;
+  font-family: "Poppins", sans-serif;
 }
 p {
   font-size: clamp(0.5rem, 4vw, 0.8rem);
   font-weight: 400;
+  font-family: "Inter", sans-serif;
 }
 
 /* global style */
@@ -48,13 +53,16 @@ p {
 .animate {
   @apply transition-all ease-in-out duration-300;
 }
+.btn {
+  @apply bg-gray text-gray_cool rounded flex justify-center items-center
+}
 
 /* homepage section */
 .container-home {
-  @apply max-w-7xl mx-auto flex flex-wrap gap-5 md:gap-2 justify-center;
+  @apply max-w-7xl mx-auto flex flex-wrap my-10 gap-5 md:gap-2 justify-center;
 }
 .item-home {
-  @apply w-96 h-60 flex-1 rounded-md border p-4 cursor-pointer;
+  @apply w-96 h-60 flex-1 rounded-md border p-4 cursor-pointer flex flex-col items-center justify-center
 }
 
 /* Sidebar section */
@@ -74,37 +82,57 @@ p {
   @apply h-full flex gap-2 overflow-y-auto;
 }
 .sidebar-content {
-  flex: 20%;
-  @apply border-r border-gray_alt;
+  flex: 15%;
+  @apply border-r border-gray_alt 
 }
 .logo {
-  @apply h-20 flex justify-center items-center;
+  @apply h-24 w-full flex justify-center items-center cursor-pointer
 }
 .sidebar-item {
-  @apply p-3 px-5 cursor-pointer hover:text-blue hover:border-r-4 hover:border-blue;
-}
-.sidebar-subtitle {
-  @apply px-2 mt-3;
+  @apply p-3 px-5 cursor-pointer hover:text-blue hover:border-r-4 hover:border-blue flex items-center gap-3
 }
 .sidebar-item-active {
-  @apply border-r-4 border-blue text-blue;
+  @apply border-r-4 border-blue text-blue
 }
 .sidebar-children {
-  @apply w-full;
+  @apply w-full 
 }
 .children {
-  @apply px-5 grid gap-5;
+  @apply px-5 grid gap-5 w-full 
 }
 .children-item {
-  @apply border-b border-gray py-10 mb-5;
+  @apply border-b border-gray py-10 mb-5
 }
 
 /* input section */
 .input {
-  @apply focus:ring-0 outline-none w-full text-sm p-2 rounded-md bg-gray_alt border border-gray_alt;
+  @apply focus:ring-0 outline-none w-full text-sm py-3 rounded-md bg-gray_alt;
 }
 .error-input {
   @apply text-start text-red;
+}
+
+/* table section */
+.container-table {
+  @apply flex flex-col w-full
+}
+.container-table-2 {
+  @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8
+}
+.container-table-3 {
+  @apply py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8 
+}
+.container-table-4 {
+  @apply shadow overflow-hidden sm:rounded-lg
+}
+.table {
+  @apply min-w-full divide-y divide-gray
+}
+.tr {
+  @apply text-left font-medium text-gray_cool bg-gray uppercase tracking-wider
+}
+.item-table {
+  @apply p-2 text-left
 }
 
 /* Notif section */
@@ -118,13 +146,13 @@ p {
 /* scroll snap section */
 .container-snap {
   scroll-snap-type: x mandatory;
-  scroll-padding: 40px;
-  @apply flex overflow-x-scroll p-5 w-80 border-4 rounded-md gap-5 mx-auto;
+  scroll-padding: 10px;
+  @apply flex overflow-x-scroll py-5 px-2 rounded-md gap-5
 }
 .child-snap {
   flex: 0 0 100%;
   scroll-snap-align: start;
-  @apply bg-gray rounded-md py-16 px-4 cursor-pointer;
+  @apply bg-gray rounded-md py-16 px-4 cursor-pointer text-gray_cool w-full
 }
 
 /* dropdown section */

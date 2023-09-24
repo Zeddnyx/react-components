@@ -37,7 +37,9 @@ function Input({
           value={value}
           onChange={onChange}
           disabled={isDisabled}
-          className={`${logo && "pl-7"} input`}
+          className={`${logo ? "pl-7" : "px-3"} ${
+            isError ? "border border-red" : "border-gray_alt"
+          } input`}
         />
       </div>
       <p className="error-input">{isError}</p>

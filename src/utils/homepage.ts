@@ -1,15 +1,15 @@
 import Animation from "pages/Animations";
 import Modal from "pages/Modal";
 import Pagination from "pages/Paginations";
-import Scroll from "pages/Scroll";
+import Slider from "pages/Slider";
 import Form from "pages/Form";
 
-//* subtitle list
-import { data as form } from "./list-form";
-import { data as animation} from "./list-animation";
-import { data as modal } from "./list-modal";
-import { data as pagination} from "./list-pagination";
-import { data as scroll} from "./list-scroll";
+//* icons
+import { MdAnimation } from "react-icons/md";
+import { AiOutlineForm } from "react-icons/ai";
+import { PiSlideshowLight } from "react-icons/pi";
+import { RiPagesLine } from "react-icons/ri";
+import { SiPowerpages } from "react-icons/si";
 
 export const data = [
   {
@@ -17,34 +17,34 @@ export const data = [
     slug: "/form-input",
     image: "",
     element: Form,
-    subtitle: form,
+    icons: AiOutlineForm
   },
   {
     title: "Animation",
     slug: "/animations",
     image: "",
     element: Animation,
-    subtitle: animation,
+    icons: MdAnimation
   },
   {
     title: "Modal",
     slug: "/modal",
     image: "",
     element: Modal,
-    subtitle: modal,
+    icons: SiPowerpages 
   },
   {
     title: "Paginations",
     slug: "/paginations",
     image: "",
     element: Pagination,
-    subtitle: pagination,
+    icons: RiPagesLine
   },
   {
-    title: "Scroll",
-    slug: "/scroll",
+    title: "Slider",
+    slug: "/slider",
     image: "",
-    element: Scroll,
-    subtitle: scroll,
+    element: Slider,
+    icons: PiSlideshowLight
   },
 ];

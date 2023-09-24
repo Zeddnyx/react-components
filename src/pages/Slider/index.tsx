@@ -1,5 +1,5 @@
 import Sidebar from "~/components/Sidebar";
-import { data } from "utils/list-scroll";
+import { data } from "utils/list-slider";
 import { data as dummy } from "utils/dummyData";
 
 export default function index() {

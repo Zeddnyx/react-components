@@ -11,6 +11,10 @@ export default {
         gray_alt: "#D1D5D8",
         gray_cool: "#F9FaFB",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      }
     },
   },
   plugins: [],
