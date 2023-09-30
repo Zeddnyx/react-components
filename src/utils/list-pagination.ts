@@ -1,5 +1,5 @@
-import Pagination from "pages/Paginations/components/pagination"
-import PaginationTable from "pages/Paginations/components/pagination-table"
+import Pagination from "pages/paginations/components/pagination"
+import PaginationTable from "pages/paginations/components/pagination-table"
 export const data =[
   {
     title: "Pagination",

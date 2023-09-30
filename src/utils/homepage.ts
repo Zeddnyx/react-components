@@ -1,8 +1,8 @@
-import Animation from "pages/Animations";
-import Modal from "pages/Modal";
-import Pagination from "pages/Paginations";
-import Slider from "pages/Slider";
-import Form from "pages/Form";
+import Animation from "pages/animations";
+import Modal from "pages/modal";
+import Pagination from "pages/paginations";
+import Slider from "pages/slider";
+import Form from "pages/form";
 
 //* icons
 import { MdAnimation } from "react-icons/md";

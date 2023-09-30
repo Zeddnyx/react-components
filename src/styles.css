@@ -112,7 +112,7 @@ p {
   @apply px-5 grid gap-5 w-full;
 }
 .children-item {
-  @apply border-b border-gray py-10 mb-5 grid gap-3 
+  @apply border-b border-gray py-10 mb-5 grid gap-3 capitalize
 }
 
 /* input section */
@@ -169,6 +169,9 @@ p {
 /* dropdown section */
 .dropdown {
   @apply relative w-36 max-h-40 text-start;
+}
+.dropdown-btn {
+  @apply w-full h-10 flex justify-between rounded-md my-2 bg-gray text-white px-2
 }
 .dropdown-content {
   @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden my-2 absolute w-full;

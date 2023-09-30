@@ -1,4 +1,4 @@
-import Scroll from "pages/Slider/components/scroll-snap/";
+import Scroll from "pages/slider/components/scroll-snap/";
 
 export const data = [
   {

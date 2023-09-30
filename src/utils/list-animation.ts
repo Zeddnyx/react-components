@@ -1,4 +1,4 @@
-import Animation from "pages/Animations/components/animation"
+import Animation from "pages/animations/components/animation"
 export const data =[
   {
     title: "Animation",

@@ -19,9 +19,12 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
   };
   return (
     <div className="dropdown">
-      <button onClick={() => setIsActive(!isActive)} className="w-full flex justify-between rounded-md">
+      <button
+        onClick={() => setIsActive(!isActive)}
+        className="dropdown-btn"
+      >
         <p>{select}</p>
-        <span className={isActive ? "dropdown-active":""}>
+        <span className={isActive ? "dropdown-active" : ""}>
           <img className="w-3" src={iconArrow} alt="arrow" />
         </span>
       </button>

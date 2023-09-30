@@ -1,10 +1,10 @@
-import FormValidation from "pages/Form/components/form-validation";
-import FormDragAndDropMulti from "pages/Form/components/form-drag-and-drop-multi";
-import FormDragAndDrop from "pages/Form/components/form-drag-and-drop";
-import FormInputCopy from "pages/Form/components/form-input-copy";
-import FormDropdown from "pages/Form/components/form-dropdown";
-import FormDynamicAdd from "pages/Form/components/form-dynamic-add";
-import FormInputTag from "pages/Form/components/form-input-tag";
+import FormValidation from "pages/form/components/form-validation";
+import FormDragAndDropMulti from "pages/form/components/form-drag-and-drop-multi";
+import FormDragAndDrop from "pages/form/components/form-drag-and-drop";
+import FormInputCopy from "pages/form/components/form-input-copy";
+import FormDropdown from "pages/form/components/form-dropdown";
+import FormDynamicAdd from "pages/form/components/form-dynamic-add";
+import FormInputTag from "pages/form/components/form-input-tag";
 
 export const data = [
   {

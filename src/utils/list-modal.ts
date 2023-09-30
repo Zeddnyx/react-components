@@ -1,5 +1,5 @@
-import Notification from "pages/Modal/components/notification"
-import Modal from "pages/Modal/components/modal"
+import Notification from "pages/modal/components/notification"
+import Modal from "pages/modal/components/modal"
 
 export const data = [
   {
