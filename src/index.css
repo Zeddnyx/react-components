@@ -4,7 +4,7 @@
 
 @layer base {
   button {
-    @apply outline-none ring-0 flex justify-center items-center text-center p-2 bg-gray text-[#fff] px-5;
+    @apply outline-none ring-0 flex justify-center items-center text-center ;
   }
 }
 
@@ -14,12 +14,13 @@ h1 {
   font-family: "Poppins", sans-serif;
 }
 h2 {
-  font-size: clamp(1rem, 4vw, 2rem);
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+  width: 100%;
 }
 h3 {
-  font-size: clamp(0.7rem, 4vw, 1.5rem);
+  font-size: clamp(0.7rem, 4vw, 1.3rem);
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
@@ -54,7 +55,13 @@ p {
   @apply transition-all ease-in-out duration-300;
 }
 .btn {
-  @apply bg-gray text-gray_cool rounded flex justify-center items-center
+  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center p-2 px-4
+}
+.btn-disabled {
+  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center opacity-50 p-2 px-4
+}
+.btn-danger {
+  @apply bg-red text-gray_cool rounded-md flex justify-center items-center p-2 px-4
 }
 
 /* homepage section */
@@ -62,7 +69,7 @@ p {
   @apply max-w-7xl mx-auto flex flex-wrap my-10 gap-5 md:gap-2 justify-center;
 }
 .item-home {
-  @apply w-96 h-60 flex-1 rounded-md border p-4 cursor-pointer flex flex-col items-center justify-center
+  @apply w-96 h-60 flex-1 rounded-md p-4 cursor-pointer flex flex-col items-center text-start justify-center hover:bg-gray_cool;
 }
 
 /* Sidebar section */
@@ -79,30 +86,33 @@ p {
 }
 
 .sidebar {
-  @apply h-full flex gap-2 overflow-y-auto;
+  @apply h-full grid grid-cols-4 gap-2 overflow-y-auto relative;
+}
+.sidebar-content-parent {
+  flex: 15%;
+  @apply bg-red w-full h-full relative col-span-1
 }
 .sidebar-content {
-  flex: 15%;
-  @apply border-r border-gray_alt flex flex-col gap-3
+  @apply hidden md:block border-r border-gray_alt flex flex-col gap-3 overflow-y-auto fixed top-0 left-0 z-50 min-h-screen transition-transform -translate-x-full sm:translate-x-0
 }
 
 .logo img {
-  @apply h-40 w-full cursor-pointer
+  @apply h-40 w-full cursor-pointer;
 }
 .sidebar-item {
-  @apply p-3 px-5 cursor-pointer hover:text-blue hover:border-r-4 hover:border-blue flex justify-center md:justify-start items-center gap-3
+  @apply p-3 px-5 cursor-pointer hover:text-blue hover:border-r-4 hover:border-blue flex justify-center md:justify-start items-center gap-3;
 }
 .sidebar-item-active {
-  @apply border-r-4 border-blue text-blue
+  @apply border-r-4 border-blue text-blue;
 }
 .sidebar-children {
-  @apply w-full 
+  @apply w-full col-span-4 md:col-span-3 md:ml-40 
 }
 .children {
-  @apply px-5 grid gap-5 w-full 
+  @apply px-5 grid gap-5 w-full;
 }
 .children-item {
-  @apply border-b border-gray py-10 mb-5 grid gap-3
+  @apply border-b border-gray py-10 mb-5 grid gap-3 
 }
 
 /* input section */
@@ -115,25 +125,25 @@ p {
 
 /* table section */
 .container-table {
-  @apply flex flex-col w-full
+  @apply flex flex-col w-full;
 }
 .container-table-2 {
-  @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8
+  @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8;
 }
 .container-table-3 {
-  @apply py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8 
+  @apply py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8;
 }
 .container-table-4 {
-  @apply shadow overflow-hidden sm:rounded-lg
+  @apply shadow overflow-hidden sm:rounded-lg;
 }
 .table {
-  @apply min-w-full divide-y divide-gray
+  @apply min-w-full divide-y divide-gray;
 }
 .tr {
-  @apply text-left font-medium text-gray_cool bg-gray uppercase tracking-wider
+  @apply text-left font-medium text-gray_cool bg-gray uppercase tracking-wider;
 }
 .item-table {
-  @apply p-2 text-left
+  @apply p-2 text-left;
 }
 
 /* Notif section */
@@ -148,12 +158,12 @@ p {
 .container-snap {
   scroll-snap-type: x mandatory;
   scroll-padding: 10px;
-  @apply flex overflow-x-scroll py-5 px-2 rounded-md gap-5
+  @apply flex overflow-x-scroll py-5 px-2 rounded-md gap-5;
 }
 .child-snap {
   flex: 0 0 100%;
   scroll-snap-align: start;
-  @apply bg-gray rounded-md py-16 px-4 cursor-pointer text-gray_cool w-full
+  @apply bg-gray rounded-md py-16 px-4 cursor-pointer text-gray_cool w-full;
 }
 
 /* dropdown section */
@@ -161,7 +171,7 @@ p {
   @apply relative w-36 max-h-40 text-start;
 }
 .dropdown-content {
-  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden mt-2;
+  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden my-2 absolute w-full;
 }
 .dropdown-item {
   @apply cursor-pointer;

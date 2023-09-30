@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "components/Input";
+import Input from "components/Form/Input";
 
 export default function Index() {
   const [form, setForm] = useState([
@@ -21,7 +21,7 @@ export default function Index() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
     const { name, value } = e.target;
     const index = form.findIndex((item) => item.id === id);
-    const list = [...form] as any // eslint-disable-line
+    const list = [...form] as any; // eslint-disable-line
     list[index][name] = value;
     setForm(list);
   };
@@ -47,11 +47,7 @@ export default function Index() {
               />
               <div className="flexCenter mb-2">
                 {form.length - 1 === id && form.length < 5 && (
-                  <button
-                    onClick={handleAddForm}
-                    type="button"
-                    className="bg-gray"
-                  >
+                  <button onClick={handleAddForm} type="button" className="btn">
                     Add Social Media
                   </button>
                 )}
@@ -59,7 +55,7 @@ export default function Index() {
                   <button
                     onClick={() => handleDelete(id)}
                     type="button"
-                    className="bg-gray"
+                    className="btn-danger"
                   >
                     Delete
                   </button>
@@ -69,7 +65,11 @@ export default function Index() {
           );
         })}
         <div>
-          <button type="submit" className="bg-gray">
+          <button
+            type="submit"
+            className={form[0].social === "" ? "btn-disabled" : "btn"}
+            disabled={form[0].social === ""}
+          >
             Submit
           </button>
         </div>

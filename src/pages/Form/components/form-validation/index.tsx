@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "components/Input";
+import Input from "components/Form/Input";
 import {
   userValidation,
   emailValidation,
@@ -28,11 +28,18 @@ export default function Form() {
       form.email.match(EMAILREGEX) &&
       form.password.match(PASSWORDREGEX)
     ) {
-      alert(`Success \nUsername: ${form.username}, \nPassword: ${form.password}`);
+      alert(
+        `Success \nUsername: ${form.username}, \nPassword: ${form.password}`,
+      );
     } else {
       setIsError(true);
     }
   };
+
+  const isDisabled =
+    form.username === "" ||
+    form.email === "" ||
+    (form.password === "" && !isError);
 
   return (
     <form className="grid gap-2">
@@ -58,7 +65,13 @@ export default function Form() {
         onChange={(e) => setForm({ ...form, password: e.target.value })}
         isError={passwordValidation(form.password, isError)}
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button
+        onClick={handleSubmit}
+        className={isDisabled ? "btn-disabled" : "btn"}
+        disabled={isDisabled}
+      >
+        Submit
+      </button>
     </form>
   );
 }

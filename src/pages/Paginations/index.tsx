@@ -1,9 +1,11 @@
 import Sidebar from "~/components/Sidebar";
+import Title from "~/components/Title";
 import { data } from "utils/list-pagination";
 
 export default function index() {
   return (
     <Sidebar>
+      <Title />
       <div className="children">
         {data.map((item, id) => {
           return (

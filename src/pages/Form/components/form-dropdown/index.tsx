@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Dropdown from "components/DropDown";
+import Dropdown from "components/Form/DropDown";
 import { data } from "utils/dummyData";
 
 export default function DropDownSection() {

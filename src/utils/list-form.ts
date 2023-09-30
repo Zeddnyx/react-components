@@ -4,6 +4,7 @@ import FormDragAndDrop from "pages/Form/components/form-drag-and-drop";
 import FormInputCopy from "pages/Form/components/form-input-copy";
 import FormDropdown from "pages/Form/components/form-dropdown";
 import FormDynamicAdd from "pages/Form/components/form-dynamic-add";
+import FormInputTag from "pages/Form/components/form-input-tag";
 
 export const data = [
   {
@@ -35,5 +36,10 @@ export const data = [
     title: "Form dynamic add",
     id: "form-dynamic-add",
     element: FormDynamicAdd,
+  },
+  {
+    title: "Form Input Tag",
+    id: "form-input-tag",
+    element: FormInputTag,
   },
 ];

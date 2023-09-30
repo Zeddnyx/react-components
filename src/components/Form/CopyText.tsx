@@ -7,7 +7,7 @@ function Copy({ text }: { text: string }) {
     }
   };
 
-  return <button onClick={handleCopy}>Copy</button>;
+  return <button className="btn" onClick={handleCopy}>Copy</button>;
 }
 
 export default memo(Copy);

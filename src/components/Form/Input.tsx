@@ -7,6 +7,8 @@ interface IInput {
   name?: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   logo?: string;
   isDisabled?: boolean;
   isError?: string;
@@ -19,6 +21,8 @@ function Input({
   name,
   value,
   onChange,
+  onKeyDown,
+  onKeyUp,
   logo,
   isDisabled = false,
   isError,
@@ -36,6 +40,8 @@ function Input({
           name={name}
           value={value}
           onChange={onChange}
+          onKeyDown={onKeyDown}
+          onKeyUp={onKeyUp}
           disabled={isDisabled}
           className={`${logo ? "pl-7" : "px-3"} ${
             isError ? "border border-red" : "border-gray_alt"

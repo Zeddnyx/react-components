@@ -41,7 +41,7 @@ export default function DropFile() {
         >
           <h2>Drag files here </h2>
           <p>or</p>
-          <button onClick={() => inputRef.current?.click()}>
+          <button className="btn" onClick={() => inputRef.current?.click()}>
             choose your files
           </button>
         </div>
@@ -79,7 +79,7 @@ export default function DropFile() {
         ))}
       </div>
 
-      <div className="btn-dropzone">
+      <div className={!!file ? "btn-disabled" : "btn"}>
         <button onClick={handleSubmit} disabled={file.length === 0}>
           Submit file
         </button>
