@@ -45,7 +45,7 @@ export default function Index() {
                 value={item.social}
                 onChange={(e) => handleChange(e, item.id)}
               />
-              <div className="flexCenter mb-2">
+              <div className="flexCenter my-2">
                 {form.length - 1 === id && form.length < 5 && (
                   <button onClick={handleAddForm} type="button" className="btn">
                     Add Social Media

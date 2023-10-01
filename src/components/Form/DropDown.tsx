@@ -32,7 +32,7 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
         <div className="dropdown-content">
           {data.map((item) => (
             <div
-              key={item.value}
+              key={item.name}
               className="dropdown-item"
               onClick={() => handeSelect(item.name)}
             >

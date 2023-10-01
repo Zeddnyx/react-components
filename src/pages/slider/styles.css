@@ -1,3 +1,17 @@
+/* Scroll snap section */
+.container-snap {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 10px;
+  @apply flex overflow-x-scroll py-5 px-2 rounded-md gap-5;
+}
+.child-snap {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  @apply bg-gray rounded-md py-16 px-4 cursor-pointer text-gray_cool w-full;
+}
+
+/* Scroll slider section */
+
 .container-slider {
   @apply flex relative flex-col w-full h-[200px];
 }

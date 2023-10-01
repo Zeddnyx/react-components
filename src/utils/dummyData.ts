@@ -1,11 +1,4 @@
-interface IData {
-  id: number;
-  name: string;
-  location: string;
-  description: string;
-  value: string;
-}
-export const data: IData[] = [
+export const data = [
   {
     id: 1,
     name: "lorem 1",

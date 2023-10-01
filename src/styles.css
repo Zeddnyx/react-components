@@ -85,6 +85,8 @@ p {
   scrollbar-width: none; /* Firefox */
 }
 
+
+/* Components sidebar */
 .sidebar {
   @apply h-full grid grid-cols-4 gap-2 relative mx-auto;
 }
@@ -115,7 +117,7 @@ p {
   @apply border-b border-gray py-10 mb-5 grid gap-3 capitalize;
 }
 
-/* input section */
+/* Components input section */
 .input {
   @apply focus:ring-0 outline-none w-full text-sm py-3 rounded-md bg-gray_alt;
 }
@@ -123,7 +125,7 @@ p {
   @apply text-start text-red;
 }
 
-/* table section */
+/* Components table section */
 .container-table {
   @apply flex flex-col w-full;
 }
@@ -144,64 +146,4 @@ p {
 }
 .item-table {
   @apply p-2 text-left;
-}
-
-/* scroll snap section */
-.container-snap {
-  scroll-snap-type: x mandatory;
-  scroll-padding: 10px;
-  @apply flex overflow-x-scroll py-5 px-2 rounded-md gap-5;
-}
-.child-snap {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  @apply bg-gray rounded-md py-16 px-4 cursor-pointer text-gray_cool w-full;
-}
-
-/* dropdown section */
-.dropdown {
-  @apply relative w-36 max-h-40 text-start;
-}
-.dropdown-btn {
-  @apply w-full h-10 flex justify-between rounded-md my-2 bg-gray text-white px-2;
-}
-.dropdown-content {
-  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden my-2 absolute w-full;
-}
-.dropdown-item {
-  @apply cursor-pointer;
-}
-.dropdown-active {
-  @apply rotate-180;
-}
-
-/* Drag and drop file section  */
-.dropzone {
-  @apply relative w-full p-2 flex justify-center flex-col items-center  h-52;
-}
-.dropzone-content {
-  @apply w-full h-full flex text-center flex-col justify-center items-center gap-1 border-4 border-gray border-dashed rounded-md;
-}
-.dropFile {
-  @apply flex flex-wrap justify-center w-full gap-5 mt-2;
-}
-.dropFile-item {
-  @apply w-full h-16 rounded-md flex justify-between items-center px-2 text-xs;
-}
-.btn-dropzone {
-  @apply mt-10 flex justify-center;
-}
-
-/* pagination section */
-.pagination-button {
-  @apply w-full flex gap-2 mt-2;
-}
-.pagination-prev{
-  @apply w-7 h-7 rotate-90;
-}
-.pagination-next{
-  @apply w-7 h-7 -rotate-90;
-}
-.pagination-inactive {
-  @apply opacity-50;
 }

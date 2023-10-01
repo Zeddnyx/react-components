@@ -1,4 +1,6 @@
 import { useState, useRef, Fragment } from "react";
+import DragAndDropViewFileMulti from "components/Form/DragAndDropViewFileMulti";
+import { iconImage } from "configs/images";
 
 export default function DropFile() {
   const [file, setFile] = useState<File[]>([]);
@@ -59,13 +61,18 @@ export default function DropFile() {
         {file?.map((file, index) => (
           <Fragment key={index}>
             <div
-              className={`dropFile-item ${!acceptedTypes.includes(file.type) || file.size > fileSize
+              className={`dropFile-item ${
+                !acceptedTypes.includes(file.type) || file.size > fileSize
                   ? "bg-red"
                   : "bg-green"
-                }`}
+              }`}
             >
-              <p>{file.name}</p>
-              <button onClick={() => handleDelete(index)}>x</button>
+              <DragAndDropViewFileMulti
+                image={iconImage}
+                file={file}
+                handleDeleteId={() => handleDelete(index)}
+                id={index}
+              />
             </div>
 
             {/* error section */}

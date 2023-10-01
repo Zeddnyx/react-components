@@ -1,4 +1,6 @@
 import { useState, useRef } from "react";
+import { iconImage} from "configs/images";
+import DragAndDropViewFile from "components/Form/DragAndDropViewFile";
 
 export default function DropFile() {
   const [file, setFile] = useState<File | null>();
@@ -66,12 +68,11 @@ export default function DropFile() {
                   : "bg-green"
               }`}
             >
-              <p>{file.name}</p>
-              <button onClick={() => handleDelete()}>x</button>
+              <DragAndDropViewFile file={file} image={iconImage} handleDelete={handleDelete} />
             </div>
 
             {/* error section */}
-            <div className="flex w-full gap-1 text-xs text-red-500">
+            <div className="flex w-full gap-1 text-xs text-red normal-case">
               {!acceptedTypes.includes(file.type) ? (
                 <p>Only accept jpeg and png.</p>
               ) : null}

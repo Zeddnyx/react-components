@@ -1,0 +1,30 @@
+/* Drag and drop file section  */
+.dropzone {
+  @apply relative w-full p-2 flex justify-center flex-col items-center  h-52;
+}
+.dropzone-content {
+  @apply w-full h-full flex text-center flex-col justify-center items-center gap-1 border-4 border-gray border-dashed rounded-md;
+}
+.dropFile {
+  @apply flex flex-wrap justify-center w-full gap-5 mt-2;
+}
+.dropFile-item {
+  @apply w-full h-16 rounded-md flex justify-between items-center px-2 text-xs;
+}
+
+/* Dropdown section */
+.dropdown {
+  @apply relative w-36 h-10 text-start 
+}
+.dropdown-btn {
+  @apply w-full h-10 flex justify-between rounded-md my-2 bg-gray text-white px-2;
+}
+.dropdown-content {
+  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden my-1 absolute w-full;
+}
+.dropdown-item {
+  @apply cursor-pointer;
+}
+.dropdown-active {
+  @apply rotate-180;
+}
