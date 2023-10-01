@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { data } from "utils/homepage";
-import { iconLogo } from "~/configs/images";
 
 export default function Sidebar({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
@@ -12,15 +11,16 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
     <aside className="sidebar hide-scrollbar">
       <div className="sidebar-content">
         <div className="logo" onClick={() => navigate("/form-input")}>
-          <img src={iconLogo} alt="logo" />
+          <h2>ZC</h2>
         </div>
         <div>
           {data.map((item) => {
             return (
               <Link to={item.slug} key={item.title}>
                 <div
-                  className={`sidebar-item ${pathname.includes(item.slug) && "sidebar-item-active"
-                    }`}
+                  className={`sidebar-item ${
+                    pathname.includes(item.slug) && "sidebar-item-active"
+                  }`}
                 >
                   <item.icons />
                   <p

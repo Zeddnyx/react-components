@@ -4,7 +4,7 @@
 
 @layer base {
   button {
-    @apply outline-none ring-0 flex justify-center items-center text-center ;
+    @apply outline-none ring-0 flex justify-center items-center text-center;
   }
 }
 
@@ -55,13 +55,13 @@ p {
   @apply transition-all ease-in-out duration-300;
 }
 .btn {
-  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center p-2 px-4
+  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center p-2 px-4;
 }
 .btn-disabled {
-  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center opacity-50 p-2 px-4
+  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center opacity-50 p-2 px-4;
 }
 .btn-danger {
-  @apply bg-red text-gray_cool rounded-md flex justify-center items-center p-2 px-4
+  @apply bg-red text-gray_cool rounded-md flex justify-center items-center p-2 px-4;
 }
 
 /* homepage section */
@@ -86,33 +86,33 @@ p {
 }
 
 .sidebar {
-  @apply h-full grid grid-cols-4 gap-2 overflow-y-auto relative;
+  @apply h-full grid grid-cols-4 gap-2 relative mx-auto;
 }
 .sidebar-content-parent {
-  flex: 15%;
-  @apply bg-red w-full h-full relative col-span-1
+  @apply bg-red w-full h-full relative col-span-1;
 }
 .sidebar-content {
-  @apply hidden md:block border-r border-gray_alt flex flex-col gap-3 overflow-y-auto fixed top-0 left-0 z-50 min-h-screen transition-transform -translate-x-full sm:translate-x-0
+  @apply hidden md:block border-r border-gray_alt flex flex-col gap-3 
+  overflow-y-scroll fixed top-0 left-0 z-50 h-screen sm:translate-x-0;
 }
 
-.logo img {
-  @apply h-40 w-full cursor-pointer;
+.logo {
+  @apply h-20 w-full cursor-pointer text-center flex justify-center items-center;
 }
 .sidebar-item {
-  @apply p-3 px-5 cursor-pointer hover:text-blue hover:border-r-4 hover:border-blue flex justify-center md:justify-start items-center gap-3;
+  @apply p-3 px-5 cursor-pointer hover:text-blue flex justify-center md:justify-start items-center gap-3;
 }
 .sidebar-item-active {
-  @apply border-r-4 border-blue text-blue;
+  @apply text-blue;
 }
 .sidebar-children {
-  @apply w-full col-span-4 md:col-span-3 md:ml-40 
+  @apply w-full col-span-4 md:col-span-3 md:ml-40;
 }
 .children {
   @apply px-5 grid gap-5 w-full;
 }
 .children-item {
-  @apply border-b border-gray py-10 mb-5 grid gap-3 capitalize
+  @apply border-b border-gray py-10 mb-5 grid gap-3 capitalize;
 }
 
 /* input section */
@@ -146,14 +146,6 @@ p {
   @apply p-2 text-left;
 }
 
-/* Notif section */
-.notify {
-  @apply fixed top-10 right-10 z-50 w-1/2 h-10 p-2 border rounded-md flex;
-}
-.notify-hidden {
-  @apply left-[-100%] opacity-0 ease-in;
-}
-
 /* scroll snap section */
 .container-snap {
   scroll-snap-type: x mandatory;
@@ -171,7 +163,7 @@ p {
   @apply relative w-36 max-h-40 text-start;
 }
 .dropdown-btn {
-  @apply w-full h-10 flex justify-between rounded-md my-2 bg-gray text-white px-2
+  @apply w-full h-10 flex justify-between rounded-md my-2 bg-gray text-white px-2;
 }
 .dropdown-content {
   @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden my-2 absolute w-full;
@@ -203,4 +195,13 @@ p {
 /* pagination section */
 .pagination-button {
   @apply w-full flex gap-2 mt-2;
+}
+.pagination-prev{
+  @apply w-7 h-7 rotate-90;
+}
+.pagination-next{
+  @apply w-7 h-7 -rotate-90;
+}
+.pagination-inactive {
+  @apply opacity-50;
 }

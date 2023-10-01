@@ -1,2 +1,2 @@
-export { default as iconArrow } from "/icons/arrow.svg";
-export { default as iconLogo} from "/icons/logo.svg";
+export { default as iconArrow } from "/icons/iconArrow.svg";
+export { default as iconInfo} from "/icons/iconInfo.svg";

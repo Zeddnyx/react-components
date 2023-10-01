@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { iconInfo } from "configs/images";
 
 interface IInput {
   type: string;
@@ -48,7 +49,12 @@ function Input({
           } input`}
         />
       </div>
-      <p className="error-input">{isError}</p>
+      {isError && (
+        <div className="flex items-center gap-2">
+          <img className="w-4 h-4 fill-red" src={iconInfo} alt="info" />
+          <p className="error-input">{isError}</p>
+        </div>
+      )}
     </div>
   );
 }

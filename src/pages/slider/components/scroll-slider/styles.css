@@ -1,0 +1,36 @@
+.container-slider {
+  @apply flex relative flex-col w-full h-[200px];
+}
+.slider {
+  @apply h-[200px] object-cover px-5;
+}
+.slider img {
+  @apply w-full h-full rounded-3xl;
+}
+
+.slider-button {
+  @apply absolute top-1/2 -translate-y-1/2 z-10 flex justify-between w-full;
+}
+
+.slider-button button img {
+  @apply w-10 h-10 shadow-md rounded-full;
+}
+.slider-prev {
+  @apply left-0 rotate-90 bg-white rounded-full;
+}
+.slider-next {
+  @apply right-0 -rotate-90 bg-white rounded-full;
+}
+.slider-inActive {
+  @apply opacity-50;
+}
+
+.slider-current-parent {
+  @apply absolute h-[10px] flex justify-center gap-1 left-0 right-0 top-[95%] 
+}
+.slider-current-active {
+  @apply bg-green h-1 w-16 rounded-full;
+}
+.slider-current-inActive {
+  @apply bg-white  h-1 w-5 rounded-full;
+}

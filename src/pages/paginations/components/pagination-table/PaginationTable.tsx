@@ -1,13 +1,9 @@
-import { memo, useState } from "react";
+import { useState } from "react";
+import Table from "components/Table";
+import { data } from "utils/dummyData";
+import { iconArrow } from "configs/images";
 
-interface IPagination {
-  data: {
-    name: string;
-    id?: number;
-  }[];
-}
-
-function Pagination({ data }: IPagination) {
+export default function PaginationTable() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Number of items per page
 
@@ -25,26 +21,25 @@ function Pagination({ data }: IPagination) {
   };
 
   return (
-    <div className="container-pagination">
+    <div className="container-pagination-table">
       {/* render data */}
-      <div className="pagination-content">
-        {pages.map((item) => (
-          <p key={item.id}>{item.name}</p>
-        ))}
+      <div className="pagination-table-content">
+        <Table data={pages} />
       </div>
 
-      {/* pagination */}
       <div className="pagination-button">
-        {/* Previous page button */}
         <button
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
-          className="text-gray-500"
+          className={
+            currentPage === 1
+              ? "pagination-inactive pagination-prev"
+              : "pagination-prev"
+          }
         >
-          Prev
+          <img src={iconArrow} alt="arrow" />
         </button>
 
-        {/* Page numbers */}
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
@@ -59,16 +54,18 @@ function Pagination({ data }: IPagination) {
           </button>
         ))}
 
-        {/* Next page button */}
         <button
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(currentPage + 1)}
-          className="text-gray-500"
+          className={
+            currentPage === totalPages
+              ? "pagination-inactive pagination-next"
+              : "pagination-next"
+          }
         >
-          Next
+          <img src={iconArrow} alt="arrow" />
         </button>
       </div>
     </div>
   );
 }
-export default memo(Pagination);

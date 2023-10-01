@@ -5,7 +5,6 @@ export default function Homepage() {
   return (
     <div className="container-home">
       {data.map((item) => {
-        console.log(item);
         return (
           <Link key={item.title} to={item.slug}>
             <div className="item-home">

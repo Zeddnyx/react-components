@@ -9,8 +9,8 @@ export default function Title() {
 
   return (
     <div className="mt-5">
-      <button onClick={() => navigate("/")} className="flex gap-3 items-center">
-        <img src={iconArrow} alt="arrow" className="rotate-90" />
+      <button onClick={() => navigate("/")} className="flex gap-3 items-center capitalize">
+        <img src={iconArrow} alt="arrow" className="rotate-90 w-5 h-5" />
         <h3>All - {filter}</h3>
       </button>
     </div>

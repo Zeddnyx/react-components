@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Notify from "components/Notify";
+import Notify from "./Notify";
 
 export default function NotifySection() {
   const [isActive, setIsActive] = useState(false);
@@ -11,7 +11,7 @@ export default function NotifySection() {
 
   return (
     <div>
-      <button onClick={handleNotify}>Notif Me</button>
+      <button className="btn" onClick={handleNotify}>Notif Me</button>
       {isActive && <Notify message="hello thereeee this is a meessage!" />}
     </div>
   );

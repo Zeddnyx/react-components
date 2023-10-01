@@ -1,7 +1,7 @@
 import Animation from "pages/animations/components/animation"
 export const data =[
   {
-    title: "Animation",
+    title: "Animation onScroll",
     id: "animation",
     element: Animation,
   },
