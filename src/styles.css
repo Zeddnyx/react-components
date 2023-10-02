@@ -12,6 +12,7 @@ h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   font-family: "Poppins", sans-serif;
+  width: 100%;
 }
 h2 {
   font-size: clamp(1rem, 4vw, 1.5rem);
@@ -23,11 +24,13 @@ h3 {
   font-size: clamp(0.7rem, 4vw, 1.3rem);
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+  width: 100%;
 }
 h4 {
   font-size: clamp(0.5rem, 4vw, 1rem);
   font-weight: 500;
   font-family: "Poppins", sans-serif;
+  width: 100%;
 }
 p {
   font-size: clamp(0.5rem, 4vw, 0.8rem);
@@ -69,7 +72,10 @@ p {
   @apply max-w-7xl mx-auto flex flex-wrap my-10 gap-5 md:gap-2 justify-center;
 }
 .item-home {
-  @apply w-96 h-60 flex-1 rounded-md p-4 cursor-pointer flex flex-col items-center text-start justify-center hover:bg-gray_cool;
+  @apply w-96 h-60 flex-1 rounded-md p-6 cursor-pointer flex flex-col items-center text-start justify-center gap-3 hover:bg-gray_cool;
+}
+.icon-home {
+  @apply w-full bg-gray_alt h-40 flex justify-center items-center rounded-md
 }
 
 /* Sidebar section */

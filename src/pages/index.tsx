@@ -8,12 +8,12 @@ export default function Homepage() {
         return (
           <Link key={item.title} to={item.slug}>
             <div className="item-home">
-              <div className="w-full bg-gray_alt h-40 flex justify-center items-center rounded-md">
+              <div className="icon-home">
                 <i>
                   <item.icons size={80} color="#fff" />
                 </i>
               </div>
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
             </div>
           </Link>
         );

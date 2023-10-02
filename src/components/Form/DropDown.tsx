@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { iconArrow } from "configs/images";
+import {MdOutlineKeyboardArrowDown} from "react-icons/md"
 
 interface IDropdown {
   data: {
@@ -24,8 +24,8 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
         className="dropdown-btn"
       >
         <p>{select}</p>
-        <span className={isActive ? "dropdown-active" : ""}>
-          <img className="w-3 fill-gray-50" src={iconArrow} alt="arrow" />
+        <span className={isActive ? "dropdown-active animate" : "animate"}>
+          <MdOutlineKeyboardArrowDown />
         </span>
       </button>
       {isActive && (

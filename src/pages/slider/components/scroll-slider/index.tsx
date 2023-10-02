@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { data } from "utils/dummyImage";
-import { iconArrow } from "configs/images";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
 export default function PaginationTable() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,12 +23,14 @@ export default function PaginationTable() {
 
   return (
     <div className="container-slider">
+      {/* main slider */}
       <div className="slider">
         {pages?.map((item) => (
           <img src={item.image} alt="image slider" key={item.id} />
         ))}
       </div>
 
+      {/* slider button action */}
       <div className="slider-button">
         <button
           disabled={currentPage === 1}
@@ -34,7 +39,7 @@ export default function PaginationTable() {
             currentPage === 1 ? "slider-inActive slider-prev" : "slider-prev"
           }
         >
-          <img src={iconArrow} alt="arrow" />
+        <MdOutlineKeyboardArrowLeft size={40} />
         </button>
 
         <button
@@ -46,10 +51,11 @@ export default function PaginationTable() {
               : "slider-next"
           }
         >
-          <img src={iconArrow} alt="arrow" />
+        <MdOutlineKeyboardArrowRight size={40} />
         </button>
       </div>
 
+      {/* slider current page */}
       <div className="slider-current-parent">
         {Array.from({ length: totalPages }, (_, index) => (
           <button

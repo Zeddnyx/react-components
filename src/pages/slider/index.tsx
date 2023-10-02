@@ -6,8 +6,8 @@ import { data as dummy } from "utils/dummyData";
 export default function index() {
   return (
     <Sidebar>
-      <Title />
       <div className="children">
+        <Title />
         {data.map((item, id) => {
           return (
             <div key={item.title} className="children-item" id={`#${item.id}`}>

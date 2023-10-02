@@ -1,5 +1,8 @@
 import { memo, useState } from "react";
-import { iconArrow } from "configs/images";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
 interface IPagination {
   data: {
@@ -42,11 +45,11 @@ function Pagination({ data }: IPagination) {
           onClick={() => handlePageChange(currentPage - 1)}
           className={
             currentPage === 1
-              ? "pagination-inactive pagination-prev"
-              : "pagination-prev"
+              ? "pagination-inactive pagination-button-action"
+              : "pagination-button-action"
           }
         >
-          <img src={iconArrow} alt="arrow" />
+          <MdOutlineKeyboardArrowLeft />
         </button>
 
         {/* Page numbers */}
@@ -69,9 +72,12 @@ function Pagination({ data }: IPagination) {
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(currentPage + 1)}
           className={
-            currentPage === totalPages ? "pagination-inactive pagination-next" : "pagination-next"
-          }>
-          <img src={iconArrow} alt="arrow"/>
+            currentPage === totalPages
+              ? "pagination-inactive pagination-button-action"
+              : "pagination-button-action"
+          }
+        >
+          <MdOutlineKeyboardArrowRight />
         </button>
       </div>
     </div>

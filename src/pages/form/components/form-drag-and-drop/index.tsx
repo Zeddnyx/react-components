@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
-import { iconImage} from "configs/images";
+import { iconImage } from "configs/images";
+
 import DragAndDropViewFile from "components/Form/DragAndDropViewFile";
+import DragAndDropValidation from "components/Form/DragAndDropValidation";
 
 export default function DropFile() {
   const [file, setFile] = useState<File | null>();
@@ -24,12 +26,14 @@ export default function DropFile() {
     setFile(null);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
     if (!acceptedTypes.includes(file!.type) || file!.size > fileSize) {
       return;
     }
     console.log("Submited file", file);
     alert("Submited file succes...");
+    setFile(null);
   };
 
   return (
@@ -62,22 +66,24 @@ export default function DropFile() {
         {file && (
           <>
             <div
-              className={`dropFile-item ${
-                !acceptedTypes.includes(file.type) || file.size > fileSize
+              className={`dropFile-item ${!acceptedTypes.includes(file.type) || file.size > fileSize
                   ? "bg-red"
                   : "bg-green"
-              }`}
+                }`}
             >
-              <DragAndDropViewFile file={file} image={iconImage} handleDelete={handleDelete} />
+              <DragAndDropViewFile
+                file={file}
+                image={iconImage}
+                handleDelete={handleDelete}
+              />
             </div>
 
             {/* error section */}
-            <div className="flex w-full gap-1 text-xs text-red normal-case">
-              {!acceptedTypes.includes(file.type) ? (
-                <p>Only accept jpeg and png.</p>
-              ) : null}
-              {file.size <= fileSize ? null : <p>Max size 3mb.</p>}
-            </div>
+            <DragAndDropValidation
+              file={file}
+              acceptedTypes={acceptedTypes}
+              fileSize={fileSize}
+            />
           </>
         )}
       </div>

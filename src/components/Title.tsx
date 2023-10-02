@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { iconArrow } from "configs/images";
+import { HiArrowLeft } from "react-icons/hi";
 
 export default function Title() {
   const { pathname } = useLocation();
@@ -9,8 +9,11 @@ export default function Title() {
 
   return (
     <div className="mt-5">
-      <button onClick={() => navigate("/")} className="flex gap-3 items-center capitalize">
-        <img src={iconArrow} alt="arrow" className="rotate-90 w-5 h-5" />
+      <button
+        onClick={() => navigate("/")}
+        className="flex gap-3 items-center capitalize"
+      >
+        <HiArrowLeft />
         <h3>All - {filter}</h3>
       </button>
     </div>

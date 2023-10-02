@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Table from "components/Table";
 import { data } from "utils/dummyData";
-import { iconArrow } from "configs/images";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
 export default function PaginationTable() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,11 +36,11 @@ export default function PaginationTable() {
           onClick={() => handlePageChange(currentPage - 1)}
           className={
             currentPage === 1
-              ? "pagination-inactive pagination-prev"
-              : "pagination-prev"
+              ? "pagination-inactive pagination-button-action"
+              : "pagination-button-action"
           }
         >
-          <img src={iconArrow} alt="arrow" />
+          <MdOutlineKeyboardArrowLeft />
         </button>
 
         {Array.from({ length: totalPages }, (_, index) => (
@@ -59,11 +62,11 @@ export default function PaginationTable() {
           onClick={() => handlePageChange(currentPage + 1)}
           className={
             currentPage === totalPages
-              ? "pagination-inactive pagination-next"
-              : "pagination-next"
+              ? "pagination-inactive pagination-button-action"
+              : "pagination-button-action"
           }
         >
-          <img src={iconArrow} alt="arrow" />
+          <MdOutlineKeyboardArrowRight />
         </button>
       </div>
     </div>

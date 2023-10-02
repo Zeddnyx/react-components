@@ -1,9 +1,12 @@
-import { useState, useRef, Fragment } from "react";
-import DragAndDropViewFileMulti from "components/Form/DragAndDropViewFileMulti";
+import { useState, useRef, Fragment, useEffect } from "react";
 import { iconImage } from "configs/images";
+
+import DragAndDropViewFileMulti from "components/Form/DragAndDropViewFileMulti";
+import DragAndDropValidation from "components/Form/DragAndDropValidation";
 
 export default function DropFile() {
   const [file, setFile] = useState<File[]>([]);
+  const [isError, setIsError] = useState(false);
   const fileSize = 3 * 1024 * 1024; // 3MB
   const acceptedTypes = ["image/jpeg", "image/png"];
   const inputRef = useRef<HTMLInputElement>(null);
@@ -24,14 +27,28 @@ export default function DropFile() {
     setFile((prev: File[]) => prev.filter((_, index) => index !== id));
   };
 
-  const handleSubmit = () => {
-    // TODO pass the id of the file not add manualy using 0
-    if (!acceptedTypes.includes(file[0].type) || file[0].size > fileSize) {
-      return;
-    }
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
     console.log("Submited file", file);
-    alert("Submited file succes...");
+    setFile([]);
   };
+
+  // Check if any file is not a PNG or JPEG
+  const hasInvalidFileType = file.some(
+    (item) => !acceptedTypes.includes(item.type),
+  );
+
+  // Check if any file is larger than the allowed file size
+  const hasInvalidFileSize = file.some((item) => item.size > fileSize);
+
+  useEffect(() => {
+    if (hasInvalidFileType || hasInvalidFileSize) {
+      setIsError(true);
+    } else {
+      setIsError(false);
+    }
+  }, [file]);
 
   return (
     <>
@@ -58,38 +75,35 @@ export default function DropFile() {
 
       {/* list file section */}
       <div className="dropFile">
-        {file?.map((file, index) => (
+        {file?.map((item, index) => (
           <Fragment key={index}>
             <div
-              className={`dropFile-item ${
-                !acceptedTypes.includes(file.type) || file.size > fileSize
+              className={`dropFile-item ${!acceptedTypes.includes(item.type) || item.size > fileSize
                   ? "bg-red"
                   : "bg-green"
-              }`}
+                }`}
             >
               <DragAndDropViewFileMulti
                 image={iconImage}
-                file={file}
+                file={item}
                 handleDeleteId={() => handleDelete(index)}
                 id={index}
               />
             </div>
 
             {/* error section */}
-            <div className="flex w-full gap-1 text-xs text-red-500">
-              {!acceptedTypes.includes(file.type) ? (
-                <p>Only accept jpeg and png.</p>
-              ) : null}
-              {file.size <= fileSize ? null : <p>Max size 3mb.</p>}
-            </div>
+            <DragAndDropValidation
+              file={item}
+              acceptedTypes={acceptedTypes}
+              fileSize={fileSize}
+            />
           </Fragment>
         ))}
-      </div>
-
-      <div className={!!file ? "btn-disabled" : "btn"}>
-        <button onClick={handleSubmit} disabled={file.length === 0}>
-          Submit file
-        </button>
+        <div className={isError ? "btn-disabled" : "btn"}>
+          <button onClick={handleSubmit} disabled={isError}>
+            Submit file
+          </button>
+        </div>
       </div>
     </>
   );

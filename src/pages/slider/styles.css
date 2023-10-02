@@ -30,10 +30,10 @@
   @apply w-10 h-10 shadow-md rounded-full;
 }
 .slider-prev {
-  @apply left-0 rotate-90 bg-white rounded-full;
+  @apply left-0 bg-white rounded-full;
 }
 .slider-next {
-  @apply right-0 -rotate-90 bg-white rounded-full;
+  @apply right-0 bg-white rounded-full;
 }
 .slider-inActive {
   @apply opacity-50;

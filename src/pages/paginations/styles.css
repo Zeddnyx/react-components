@@ -2,11 +2,8 @@
 .pagination-button {
   @apply w-full flex gap-2 mt-2;
 }
-.pagination-prev{
-  @apply w-7 h-7 rotate-90;
-}
-.pagination-next{
-  @apply w-7 h-7 -rotate-90;
+.pagination-button-action{
+  @apply w-7 h-7 ;
 }
 .pagination-inactive {
   @apply opacity-50;
