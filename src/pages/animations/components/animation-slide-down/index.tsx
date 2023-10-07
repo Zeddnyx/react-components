@@ -1,5 +1,6 @@
 import { slideInDownAnimate } from "../Animations";
 
+// TODO create a render button
 export default function Index() {
   return (
     <div className="children">

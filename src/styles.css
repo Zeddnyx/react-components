@@ -72,7 +72,7 @@ p {
   @apply max-w-7xl mx-auto flex flex-wrap my-10 gap-5 md:gap-2 justify-center;
 }
 .item-home {
-  @apply w-96 h-60 flex-1 rounded-md p-6 cursor-pointer flex flex-col items-center text-start justify-center gap-3 hover:bg-gray_cool;
+  @apply w-64 md:w-96 h-60 flex-1 rounded-md p-6 cursor-pointer flex flex-col items-center text-start justify-center gap-3 hover:bg-gray_cool;
 }
 .icon-home {
   @apply w-full bg-gray_alt h-40 flex justify-center items-center rounded-md

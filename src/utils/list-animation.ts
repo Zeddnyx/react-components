@@ -5,17 +5,17 @@ import AnimationSlide from "pages/animations/components/animation-slide-down";
 
 export const data = [
   {
-    title: "Animation onRender",
+    title: "Animation Fade in",
     id: "animation",
     element: AnimationsFade,
   },
   {
-    title: "Animation onZoom",
+    title: "Animation zoom in",
     id: "animation",
     element: AnimationZoom,
   },
   {
-    title: "Animation onSlide",
+    title: "Animation Slide down",
     id: "animation",
     element: AnimationSlide,
   },
