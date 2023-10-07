@@ -13,6 +13,8 @@ interface IInput {
   logo?: string;
   isDisabled?: boolean;
   isError?: string;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 function Input({
@@ -27,6 +29,8 @@ function Input({
   logo,
   isDisabled = false,
   isError,
+  className,
+  style,
 }: IInput) {
   return (
     <div className="relative flex flex-col gap-1">
@@ -44,9 +48,10 @@ function Input({
           onKeyDown={onKeyDown}
           onKeyUp={onKeyUp}
           disabled={isDisabled}
+          style={style}
           className={`${logo ? "pl-7" : "px-3"} ${
             isError ? "border border-red" : "border-gray_alt"
-          } input`}
+          } input ${className}`}
         />
       </div>
       {isError && (

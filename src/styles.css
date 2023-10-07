@@ -124,8 +124,19 @@ p {
 }
 
 /* Components input section */
+
+/* hide appearance input Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .input {
-  @apply focus:ring-0 outline-none w-full text-sm py-3 rounded-md bg-gray_alt;
+  @apply focus:ring-0 outline-none w-full text-sm py-3 rounded-md bg-gray_alt
 }
 .error-input {
   @apply text-start text-red;
