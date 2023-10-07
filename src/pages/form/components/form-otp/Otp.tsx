@@ -35,7 +35,7 @@ export default function Otp({ length, onChange }: IOtp) {
 
   return (
     <>
-      <div className="flex gap-2 w-1/4">
+      <div className="flex gap-2 w-full md:w-1/2 lg:w-1/4">
         {otp.map((_, id) => {
           return (
             <input
