@@ -11,7 +11,7 @@ export default function index() {
         {data.map((item, id) => (
           <div key={item.title} className="children-item" id={`${item.id}`}>
             <h3>
-              {id + 1}. {item.title}
+              <span className="text-blue">{id + 1}.</span> {item.title}
             </h3>
             <item.element />
           </div>

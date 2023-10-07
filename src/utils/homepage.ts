@@ -3,6 +3,7 @@ import Modal from "pages/modal";
 import Pagination from "pages/paginations";
 import Slider from "pages/slider";
 import Form from "pages/form";
+import DnD from "pages/dnd";
 
 //* icons
 import { MdAnimation } from "react-icons/md";
@@ -10,6 +11,7 @@ import { AiOutlineForm } from "react-icons/ai";
 import { PiSlideshowLight } from "react-icons/pi";
 import { RiPagesLine } from "react-icons/ri";
 import { SiPowerpages } from "react-icons/si";
+import { BsLayersHalf } from "react-icons/bs";
 
 export const data = [
   {
@@ -17,34 +19,41 @@ export const data = [
     slug: "/form-input",
     image: "",
     element: Form,
-    icons: AiOutlineForm
+    icons: AiOutlineForm,
   },
   {
     title: "Animation",
     slug: "/animations",
     image: "",
     element: Animation,
-    icons: MdAnimation
+    icons: MdAnimation,
   },
   {
     title: "Modal",
     slug: "/modal",
     image: "",
     element: Modal,
-    icons: SiPowerpages 
+    icons: BsLayersHalf,
   },
   {
     title: "Paginations",
     slug: "/paginations",
     image: "",
     element: Pagination,
-    icons: RiPagesLine
+    icons: RiPagesLine,
   },
   {
     title: "Slider",
     slug: "/slider",
     image: "",
     element: Slider,
-    icons: PiSlideshowLight
+    icons: PiSlideshowLight,
+  },
+  {
+    title: "Drag and drop",
+    slug: "/dnd",
+    image: "",
+    element: DnD,
+    icons: SiPowerpages,
   },
 ];

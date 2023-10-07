@@ -14,12 +14,12 @@ export const data = [
     element: FormValidation,
   },
   {
-    title: "Form drag and drop",
+    title: "Form drag and drop file",
     id: "form-drag-and-drop",
     element: FormDragAndDrop,
   },
   {
-    title: "Form drag and drop multi",
+    title: "Form drag and drop multi file",
     id: "form-drag-and-drop-multi",
     element: FormDragAndDropMulti,
   },

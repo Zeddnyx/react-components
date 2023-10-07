@@ -1,6 +1,6 @@
 /* Notify section  */
 .notify {
-  @apply fixed top-10 right-10 z-50 w-1/2 h-10 p-2 border rounded-md flex;
+  @apply fixed top-10 right-10 z-50 w-1/2 h-14 p-2 border rounded-md flex items-center;
 }
 .notify-hidden {
   @apply left-[-100%] opacity-0 ease-in;

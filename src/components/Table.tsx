@@ -15,12 +15,12 @@ export default function Table({ data }: ITable) {
             <table className="table">
               <thead>
                 <tr className="tr">
-                  <th className="item-table">id</th>
+                  <th className="item-table">#</th>
                   <th className="item-table">Name</th>
                   <th className="item-table">Description</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="border-2 rounded">
                 {data.map((item) => (
                   <tr key={item.id} className="border border-gray">
                     <td className="item-table">{item.id}</td>

@@ -1,9 +1,9 @@
 /* pagination section */
 .pagination-button {
-  @apply w-full flex gap-2 mt-2;
+  @apply flex gap-2 mt-2;
 }
-.pagination-button-action{
-  @apply w-7 h-7 ;
+.pagination-button-action {
+  @apply w-7 h-7;
 }
 .pagination-inactive {
   @apply opacity-50;

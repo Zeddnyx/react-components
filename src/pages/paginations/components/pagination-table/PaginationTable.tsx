@@ -30,44 +30,50 @@ export default function PaginationTable() {
         <Table data={pages} />
       </div>
 
-      <div className="pagination-button">
-        <button
-          disabled={currentPage === 1}
-          onClick={() => handlePageChange(currentPage - 1)}
-          className={
-            currentPage === 1
-              ? "pagination-inactive pagination-button-action"
-              : "pagination-button-action"
-          }
-        >
-          <MdOutlineKeyboardArrowLeft />
-        </button>
+      <div className="flex w-full justify-between p-2">
+        <div className="lowercase">
+          shows {itemsPerPage}-{currentPage} of {totalPages} pages
+        </div>
 
-        {Array.from({ length: totalPages }, (_, index) => (
+        <div className="pagination-button">
           <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
+            disabled={currentPage === 1}
+            onClick={() => handlePageChange(currentPage - 1)}
             className={
-              currentPage === index + 1
-                ? "pagination-button-active"
-                : "pagination-button-inactive"
+              currentPage === 1
+                ? "pagination-inactive pagination-button-action"
+                : "pagination-button-action"
             }
           >
-            {index + 1}
+            <MdOutlineKeyboardArrowLeft />
           </button>
-        ))}
 
-        <button
-          disabled={currentPage === totalPages}
-          onClick={() => handlePageChange(currentPage + 1)}
-          className={
-            currentPage === totalPages
-              ? "pagination-inactive pagination-button-action"
-              : "pagination-button-action"
-          }
-        >
-          <MdOutlineKeyboardArrowRight />
-        </button>
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              className={
+                currentPage === index + 1
+                  ? "pagination-button-active"
+                  : "pagination-button-inactive"
+              }
+            >
+              {index + 1}
+            </button>
+          ))}
+
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => handlePageChange(currentPage + 1)}
+            className={
+              currentPage === totalPages
+                ? "pagination-inactive pagination-button-action"
+                : "pagination-button-action"
+            }
+          >
+            <MdOutlineKeyboardArrowRight />
+          </button>
+        </div>
       </div>
     </div>
   );
