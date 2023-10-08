@@ -1,7 +1,7 @@
 import Sidebar from "components/Sidebar";
 import Title from "~/components/Title";
 
-import { data } from "utils/list-form";
+import { data } from "data/list-form";
 
 export default function index() {
   return (

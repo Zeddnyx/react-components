@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { data } from "utils/homepage";
+import { data } from "data/homepage";
 
 export default function Homepage() {
   return (
@@ -9,9 +9,7 @@ export default function Homepage() {
           <Link key={item.title} to={item.slug}>
             <div className="item-home">
               <div className="icon-home">
-                <i>
-                  <item.icons size={80} color="#fff" />
-                </i>
+                <item.icons color="#fff" className="h-14 w-14 md:h-16 md:w-16" />
               </div>
               <h3>{item.title}</h3>
             </div>

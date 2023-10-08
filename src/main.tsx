@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import { BrowserRouter, Routes,Route } from "react-router-dom";
 
 import "./styles.css";
-import "pages/animations/animations.css"
+import "pages/animations/styles.css"
 import "pages/slider/styles.css"
 import "pages/modal/styles.css"
 import "pages/paginations/styles.css"

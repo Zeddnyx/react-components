@@ -11,7 +11,6 @@
 }
 
 /* Scroll slider section */
-
 .container-slider {
   @apply flex relative flex-col w-full h-[200px];
 }
@@ -46,5 +45,45 @@
   @apply bg-green h-1 w-16 rounded-full;
 }
 .slider-current-inActive {
+  @apply bg-white  h-1 w-5 rounded-full;
+}
+
+
+/* Scroll carousal section */
+.container-carousal {
+  @apply flex relative flex-col w-full h-full
+}
+.carousal {
+  @apply flex w-full justify-center gap-2
+}
+
+.carousal img {
+  @apply w-full h-full rounded-3xl;
+}
+
+.carousal-button {
+  @apply absolute top-1/2 -translate-y-1/2 z-10 flex justify-between w-full;
+}
+
+.carousal-button button img {
+  @apply w-10 h-10 shadow-md rounded-full;
+}
+.carousal-prev {
+  @apply left-0 bg-white rounded-full;
+}
+.carousal-next {
+  @apply right-0 bg-white rounded-full;
+}
+.carousal-inActive {
+  @apply opacity-50;
+}
+
+.carousal-current-parent {
+  @apply absolute h-[10px] flex justify-center gap-1 left-0 right-0 -bottom-8
+}
+.carousal-current-active {
+  @apply bg-green h-1 w-16 rounded-full;
+}
+.carousal-current-inActive {
   @apply bg-white  h-1 w-5 rounded-full;
 }

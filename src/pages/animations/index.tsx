@@ -1,6 +1,6 @@
 import Sidebar from "~/components/Sidebar";
 import Title from "~/components/Title";
-import { data } from "utils/list-animation";
+import { data } from "data/list-animation";
 
 export default function index() {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Dropdown from "components/Form/DropDown";
-import { data } from "utils/dummyData";
+import { data } from "data/dummyData";
 
 export default function DropDownSection() {
   const [select, setSelect] = useState("select");

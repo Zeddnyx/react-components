@@ -1,5 +1,5 @@
 import DragAndDropItem from "./DragAndDropItem";
-import { data } from "utils/dummyData";
+import { data } from "data/dummyData";
 
 export default function Index() {
   return (

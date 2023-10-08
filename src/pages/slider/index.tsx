@@ -1,7 +1,7 @@
 import Sidebar from "~/components/Sidebar";
 import Title from "~/components/Title";
-import { data } from "utils/list-slider";
-import { data as dummy } from "utils/dummyData";
+import { data } from "data/list-slider";
+import { data as dummy } from "data/dummyData";
 
 export default function index() {
   return (

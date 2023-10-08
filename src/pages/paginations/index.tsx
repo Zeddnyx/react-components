@@ -1,6 +1,6 @@
 import Sidebar from "~/components/Sidebar";
 import Title from "~/components/Title";
-import { data } from "utils/list-pagination";
+import { data } from "data/list-pagination";
 
 export default function index() {
   return (

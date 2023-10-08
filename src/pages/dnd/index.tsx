@@ -1,4 +1,4 @@
-import { data } from "utils/list-dnd";
+import { data } from "data/list-dnd";
 import Sidebar from "components/Sidebar";
 import Title from "~/components/Title";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Table from "components/Table";
-import { data } from "utils/dummyData";
+import { data } from "data/dummyData";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,

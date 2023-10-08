@@ -30,6 +30,7 @@
       "routes/*": ["./routes/*"],
       "hooks/*": ["./hooks/*"],
       "configs/*": ["./configs/*"],
+      "data/*": ["./data/*"],
       "utils/*": ["./utils/*"]
     }
   },

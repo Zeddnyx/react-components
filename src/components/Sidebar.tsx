@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { data } from "utils/homepage";
+import { data } from "data/homepage";
 
 export default function Sidebar({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();

@@ -1,6 +1,6 @@
 import DropdownHover from "components/Form/DropDownHover";
 import { useState } from "react";
-import { data } from "utils/dummyData";
+import { data } from "data/dummyData";
 
 export default function Index() {
   const [select, setSelect] = useState("Select");

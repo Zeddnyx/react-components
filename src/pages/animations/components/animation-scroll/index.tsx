@@ -1,5 +1,5 @@
 import Animation from "./AnimationScroll";
-import { data } from "utils/dummyData";
+import { data } from "data/dummyData";
 
 export default function Index() {
   return (
