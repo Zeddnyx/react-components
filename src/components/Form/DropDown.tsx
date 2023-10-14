@@ -1,14 +1,6 @@
 import { memo, useState } from "react";
-import {MdOutlineKeyboardArrowDown} from "react-icons/md"
-
-interface IDropdown {
-  data: {
-    value: string;
-    name: string;
-  }[];
-  select: string;
-  setSelect: React.Dispatch<React.SetStateAction<string>>;
-}
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { IDropdown } from "types/form";
 
 function Dropdown({ data, select, setSelect }: IDropdown) {
   const [isActive, setIsActive] = useState(false);
@@ -19,10 +11,7 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
   };
   return (
     <div className="dropdown">
-      <button
-        onClick={() => setIsActive(!isActive)}
-        className="dropdown-btn"
-      >
+      <button type="button" onClick={() => setIsActive(!isActive)} className="dropdown-btn">
         <p>{select}</p>
         <span className={isActive ? "dropdown-active animate" : "animate"}>
           <MdOutlineKeyboardArrowDown />

@@ -1,27 +1,24 @@
 import { memo } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-interface IDropdown {
-  data: {
-    value: string;
-    name: string;
-  }[];
-  select: string;
-  setSelect: React.Dispatch<React.SetStateAction<string>>;
-}
+import { IDropdown } from "types/form";
 
 function Dropdown({ data, select, setSelect }: IDropdown) {
+
   const handeSelect = (e: string) => {
     setSelect(e);
   };
+
   return (
-    <div className="dropdown group">
+    <div className="dropdown  group">
+
       <button className="dropdown-btn">
         <p>{select}</p>
         <span className="group-hover:rotate-180 animate">
           <MdOutlineKeyboardArrowDown />
         </span>
       </button>
+
       <div className="dropdown-content opacity-0 group-hover:opacity-100">
         {data.map((item) => (
           <div
@@ -33,6 +30,7 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
           </div>
         ))}
       </div>
+
     </div>
   );
 }

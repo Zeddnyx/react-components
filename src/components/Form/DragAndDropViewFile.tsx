@@ -1,11 +1,4 @@
-interface IFile {
-  file: {
-    name: string;
-    size: number;
-  };
-  image: string;
-  handleDelete: () => void;
-}
+import { IFile } from "types/form";
 
 export default function DragAndDropViewFile({
   file,

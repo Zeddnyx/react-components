@@ -1,10 +1,4 @@
-interface ITable {
-  data: {
-    id: number;
-    name: string;
-    description: string;
-  }[];
-}
+import { ITable } from "types/form";
 
 export default function Table({ data }: ITable) {
   return (

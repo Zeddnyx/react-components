@@ -1,19 +1,11 @@
-interface IFile {
-  file: {
-    name: string;
-    size: number;
-  };
-  image: string;
-  handleDeleteId: (id: number) => void;
-  id: number;
-}
+import { IFileView } from "types/form";
 
 export default function DragAndDropViewFile({
   file,
   image,
   handleDeleteId,
   id,
-}: IFile) {
+}: IFileView) {
   return (
     <>
       <div className="flex gap-1">

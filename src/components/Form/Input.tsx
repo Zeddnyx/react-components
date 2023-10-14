@@ -1,21 +1,7 @@
 import { memo } from "react";
 import { iconInfo } from "configs/images";
 
-interface IInput {
-  type: string;
-  placeholder: string;
-  label?: string;
-  name?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  logo?: string;
-  isDisabled?: boolean;
-  isError?: string;
-  className?: string;
-  style?: React.CSSProperties;
-}
+import { IInput } from "types/form";
 
 function Input({
   type,
@@ -49,13 +35,12 @@ function Input({
           onKeyUp={onKeyUp}
           disabled={isDisabled}
           style={style}
-          className={`${logo ? "pl-7" : "px-3"} ${
-            isError ? "border border-red" : "border-gray_alt"
-          } input ${className}`}
+          className={`${logo ? "pl-7" : "px-3"} ${isError ? "border border-red" : "border-gray_alt"
+            } input ${className}`}
         />
       </div>
       {isError && (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 lowercase">
           <img className="w-4 h-4 fill-red" src={iconInfo} alt="info" />
           <p className="error-input">{isError}</p>
         </div>

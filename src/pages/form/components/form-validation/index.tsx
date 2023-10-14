@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Input from "components/Form/Input";
 import {
-  userValidation,
+  inputValidation,
   emailValidation,
   passwordValidation,
-  USERREGEX,
+  INPUTREGEX,
   EMAILREGEX,
   PASSWORDREGEX,
 } from "configs/formValidation";
@@ -24,7 +24,7 @@ export default function Form() {
       !!form.username &&
       !!form.email &&
       !!form.password &&
-      form.username.match(USERREGEX) &&
+      form.username.match(INPUTREGEX) &&
       form.email.match(EMAILREGEX) &&
       form.password.match(PASSWORDREGEX)
     ) {
@@ -49,7 +49,7 @@ export default function Form() {
         placeholder="Username"
         value={form.username}
         onChange={(e) => setForm({ ...form, username: e.target.value })}
-        isError={userValidation(form.username, isError)}
+        isError={inputValidation(form.username, "Username", isError)}
       />
       <Input
         type="email"
