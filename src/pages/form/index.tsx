@@ -7,7 +7,7 @@ export default function index() {
   return (
     <Sidebar>
       <div className="children">
-        <Title/>
+        <Title />
         {data.map((item, id) => (
           <div key={item.title} className="children-item" id={`${item.id}`}>
             <h3>

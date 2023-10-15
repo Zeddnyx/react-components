@@ -24,22 +24,25 @@ export interface IDropdown {
   setSelect: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export interface IDragAndDropValidation {
-  file: File;
-  acceptedTypes: string[];
-  fileSize: number;
+export interface IFileDrag {
+  multiple: boolean;
+  acceptType: string[];
+  maxSize: number;
 }
 
-export interface IFile {
+export interface IFileValidation {
   file: File;
-  image: string;
-  handleDelete: () => void;
+  acceptType: string[];
+  maxSize: number;
 }
+
 export interface IFileView {
   file: File;
   image: string;
   handleDeleteId: (id: number) => void;
   id: number;
+  acceptType: string[];
+  maxSize: number;
 }
 
 export interface ITable {

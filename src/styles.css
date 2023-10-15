@@ -71,10 +71,10 @@ td {
   @apply bg-gray text-gray_cool rounded-md flex justify-center items-center p-2 px-4;
 }
 .btn-disabled {
-  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center opacity-50 p-2 px-4;
+  @apply bg-gray text-gray_cool rounded-md flex justify-center items-center opacity-50 p-2 px-4 mt-5;
 }
 .btn-danger {
-  @apply bg-red text-gray_cool rounded-md flex justify-center items-center p-2 px-4;
+  @apply bg-red text-gray_cool rounded-md flex justify-center items-center p-2 px-4 mt-5;
 }
 
 /* homepage section */
@@ -120,7 +120,7 @@ td {
   @apply p-3 px-5 cursor-pointer hover:text-blue flex justify-center md:justify-start items-center gap-3;
 }
 .sidebar-item-active {
-  @apply text-blue;
+  @apply text-blue font-bold
 }
 .sidebar-children {
   @apply w-full col-span-4 md:col-span-3 md:ml-40;
