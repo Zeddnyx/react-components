@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 function Copy({ text }: { text: string }) {
   const handleCopy = () => {
     if (text.length != 0 || text != undefined) {
@@ -10,4 +8,4 @@ function Copy({ text }: { text: string }) {
   return <button className="btn" onClick={handleCopy}>Copy</button>;
 }
 
-export default memo(Copy);
+export default Copy

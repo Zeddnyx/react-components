@@ -1,17 +1,14 @@
-import { memo } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import { IDropdown } from "types/form";
 
 function Dropdown({ data, select, setSelect }: IDropdown) {
-
   const handeSelect = (e: string) => {
     setSelect(e);
   };
 
   return (
     <div className="dropdown  group">
-
       <button className="dropdown-btn">
         <p>{select}</p>
         <span className="group-hover:rotate-180 animate">
@@ -30,8 +27,7 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
           </div>
         ))}
       </div>
-
     </div>
   );
 }
-export default memo(Dropdown);
+export default Dropdown

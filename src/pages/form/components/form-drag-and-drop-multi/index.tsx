@@ -35,15 +35,17 @@ export default function DropFile() {
   };
 
   // Check if any file is not a PNG or JPEG
+  // Check if any file is larger than the allowed file size
   const hasInvalidFileType = file.some(
     (item) => !acceptedTypes.includes(item.type),
   );
-
-  // Check if any file is larger than the allowed file size
   const hasInvalidFileSize = file.some((item) => item.size > fileSize);
 
+  const isDisabled = isError && !!file;
   useEffect(() => {
     if (hasInvalidFileType || hasInvalidFileSize) {
+      setIsError(true);
+    } else if (!!file) {
       setIsError(true);
     } else {
       setIsError(false);
@@ -78,10 +80,11 @@ export default function DropFile() {
         {file?.map((item, index) => (
           <Fragment key={index}>
             <div
-              className={`dropFile-item ${!acceptedTypes.includes(item.type) || item.size > fileSize
+              className={`dropFile-item ${
+                !acceptedTypes.includes(item.type) || item.size > fileSize
                   ? "bg-red"
                   : "bg-green"
-                }`}
+              }`}
             >
               <DragAndDropViewFileMulti
                 image={iconImage}
@@ -99,11 +102,11 @@ export default function DropFile() {
             />
           </Fragment>
         ))}
-        <div className={isError ? "btn-disabled" : "btn"}>
-          <button onClick={handleSubmit} disabled={isError}>
-            Submit file
-          </button>
-        </div>
+      </div>
+      <div className={isDisabled ? "btn-disabled" : "btn"}>
+        <button onClick={handleSubmit} disabled={isDisabled}>
+          Submit file
+        </button>
       </div>
     </>
   );

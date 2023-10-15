@@ -37,6 +37,16 @@ p {
   font-weight: 400;
   font-family: "Inter", sans-serif;
 }
+th {
+  font-size: clamp(0.5rem, 2vw, 1rem);
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+td {
+  font-size: clamp(0.3rem, 2vw, 0.8rem);
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
 
 /* global style */
 .flexCenterCenter {
@@ -75,7 +85,7 @@ p {
   @apply w-full h-60 flex-1 rounded-md p-6 cursor-pointer flex flex-col items-center text-start justify-center gap-3 hover:bg-gray_cool;
 }
 .icon-home {
-  @apply w-full bg-gray_alt h-40 flex justify-center items-center rounded-md
+  @apply w-full bg-gray_alt h-40 flex justify-center items-center rounded-md;
 }
 
 /* Sidebar section */
@@ -90,7 +100,6 @@ p {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
 
 /* Components sidebar */
 .sidebar {
@@ -132,11 +141,11 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 .input {
-  @apply focus:ring-0 outline-none w-full text-sm py-3 rounded-md bg-gray_alt
+  @apply focus:ring-0 outline-none w-full text-sm py-3 rounded-md bg-gray_alt;
 }
 .error-input {
   @apply text-start text-red;
@@ -144,23 +153,14 @@ input[type=number] {
 
 /* Components table section */
 .container-table {
-  @apply flex flex-col w-full;
-}
-.container-table-2 {
-  @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8;
-}
-.container-table-3 {
-  @apply py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8;
-}
-.container-table-4 {
-  @apply shadow overflow-hidden sm:rounded-lg;
+  @apply overflow-auto relative;
 }
 .table {
-  @apply min-w-full divide-y divide-gray;
+  @apply w-full divide-y divide-gray;
 }
 .tr {
-  @apply text-left font-medium text-gray_cool bg-gray uppercase tracking-wider;
+  @apply text-left font-medium text-gray_cool bg-gray uppercase tracking-wider rounded;
 }
 .item-table {
-  @apply p-2 text-left;
+  @apply p-2 text-left truncate;
 }

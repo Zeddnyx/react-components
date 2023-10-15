@@ -66,10 +66,11 @@ export default function DropFile() {
         {file && (
           <>
             <div
-              className={`dropFile-item ${!acceptedTypes.includes(file.type) || file.size > fileSize
+              className={`dropFile-item ${
+                !acceptedTypes.includes(file.type) || file.size > fileSize
                   ? "bg-red"
                   : "bg-green"
-                }`}
+              }`}
             >
               <DragAndDropViewFile
                 file={file}
@@ -87,7 +88,7 @@ export default function DropFile() {
           </>
         )}
       </div>
-      <div className={file ? "btn" : "btn-disabled"}>
+      <div className={!file ? "btn-disabled " : "btn"}>
         <button onClick={handleSubmit} disabled={!file}>
           Submit file
         </button>

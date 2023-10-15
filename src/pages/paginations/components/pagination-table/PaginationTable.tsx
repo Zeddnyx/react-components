@@ -24,13 +24,11 @@ export default function PaginationTable() {
   };
 
   return (
-    <div className="container-pagination-table">
+    <>
       {/* render data */}
-      <div className="pagination-table-content">
-        <Table data={pages} />
-      </div>
+      <Table data={pages} />
 
-      <div className="flex w-full justify-between p-2">
+      <div className="flex w-full justify-between items-center p-2">
         <div className="lowercase">
           shows {itemsPerPage}-{currentPage} of {totalPages} pages
         </div>
@@ -75,6 +73,6 @@ export default function PaginationTable() {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
