@@ -39,7 +39,7 @@ export interface IFileValidation {
 export interface IFileView {
   file: File;
   image: string;
-  handleDeleteId: (id: number) => void;
+  handleDelete: (id: number) => void;
   id: number;
   acceptType: string[];
   maxSize: number;

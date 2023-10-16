@@ -58,23 +58,20 @@ export default function DropFile({
   return (
     <>
       {!multiple && file[0] ? (
-        <>
-          {/* list file section */}
-          <div className="dropFile">
-            {file?.map((item, index) => (
-              <Fragment key={index}>
-                <FileView
-                  image={iconImage}
-                  file={item}
-                  handleDeleteId={() => handleDelete(index)}
-                  id={index}
-                  maxSize={maxSize}
-                  acceptType={acceptType}
-                />
-              </Fragment>
-            ))}
-          </div>
-        </>
+        <div className="dropFile">
+          {file?.map((item, index) => (
+            <Fragment key={index}>
+              <FileView
+                image={iconImage}
+                file={item}
+                handleDelete={() => handleDelete(index)}
+                id={index}
+                maxSize={maxSize}
+                acceptType={acceptType}
+              />
+            </Fragment>
+          ))}
+        </div>
       ) : (
         <>
           <div className="dropzone">
@@ -85,7 +82,10 @@ export default function DropFile({
             >
               <h2>Drag files here </h2>
               <p>or</p>
-              <button className="btn" onClick={() => inputRef.current?.click()}>
+              <button
+                className="btn"
+                onClick={() => inputRef?.current?.click()}
+              >
                 choose your files
               </button>
             </div>
@@ -103,7 +103,7 @@ export default function DropFile({
                 <FileView
                   image={iconImage}
                   file={item}
-                  handleDeleteId={() => handleDelete(index)}
+                  handleDelete={() => handleDelete(index)}
                   id={index}
                   maxSize={maxSize}
                   acceptType={acceptType}
