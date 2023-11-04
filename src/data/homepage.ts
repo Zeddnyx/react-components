@@ -4,6 +4,7 @@ import Pagination from "pages/paginations";
 import Slider from "pages/slider";
 import Form from "pages/form";
 import DnD from "pages/dnd";
+import Card from "pages/card";
 
 //* icons
 import { MdAnimation } from "react-icons/md";
@@ -11,7 +12,8 @@ import { AiOutlineForm } from "react-icons/ai";
 import { PiSlideshowLight } from "react-icons/pi";
 import { RiPagesLine } from "react-icons/ri";
 import { SiPowerpages } from "react-icons/si";
-import { BsLayersHalf } from "react-icons/bs";
+import { BsLayersHalf,BsCardHeading } from "react-icons/bs";
+
 
 export const data = [
   {
@@ -56,4 +58,11 @@ export const data = [
     element: DnD,
     icons: SiPowerpages,
   },
+  {
+    title: "Card",
+    slug: "/card",
+    image: "",
+    element: Card,
+    icons: BsCardHeading,
+  }
 ];

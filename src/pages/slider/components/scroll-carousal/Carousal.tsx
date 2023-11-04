@@ -28,7 +28,7 @@ export default function Carousal() {
       {/* main carousal */}
       <div className="carousal">
         {pages?.map((item) => (
-          <img src={item.image} alt="image carousal" key={item.id} />
+          <img src={item.image} alt="image carousal" key={item.id} className="object-cover w-full h-full" />
         ))}
       </div>
 

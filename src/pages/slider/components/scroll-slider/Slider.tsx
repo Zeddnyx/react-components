@@ -26,7 +26,7 @@ export default function Slider() {
       {/* main slider */}
       <div className="slider">
         {pages?.map((item) => (
-          <img src={item.image} alt="image slider" key={item.id} />
+          <img src={item.image} alt="image slider" key={item.id} className="object-cover w-full h-full" />
         ))}
       </div>
 
