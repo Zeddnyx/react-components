@@ -28,6 +28,8 @@ export interface IFileDrag {
   multiple: boolean;
   acceptType: string[];
   maxSize: number;
+  file: File[];
+  setFile: React.Dispatch<React.SetStateAction<File[]>>;
 }
 
 export interface IFileValidation {

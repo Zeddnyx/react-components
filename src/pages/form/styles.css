@@ -17,10 +17,10 @@
   @apply relative w-full h-10 text-start 
 }
 .dropdown-btn {
-  @apply w-full h-10 flex justify-between rounded-md my-2 bg-gray text-white px-2;
+  @apply w-full h-10 flex justify-between rounded-md mb-2 bg-gray text-white px-2;
 }
 .dropdown-content {
-  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 max-h-40 overflow-y-auto overflow-hidden my-1 absolute w-full z-10;
+  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 overflow-y-auto;
 }
 .dropdown-item {
   @apply cursor-pointer;

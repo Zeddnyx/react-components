@@ -4,6 +4,7 @@ import {
   inputValidation,
   emailValidation,
   passwordValidation,
+  confirmPasswordValidation,
   INPUTREGEX,
   EMAILREGEX,
   PASSWORDREGEX,
@@ -14,6 +15,7 @@ export default function Form() {
     username: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
   const [isError, setIsError] = useState(false);
 
@@ -24,6 +26,8 @@ export default function Form() {
       !!form.username &&
       !!form.email &&
       !!form.password &&
+      !!form.confirmPassword &&
+      form.password === form.confirmPassword &&
       form.username.match(INPUTREGEX) &&
       form.email.match(EMAILREGEX) &&
       form.password.match(PASSWORDREGEX)
@@ -39,7 +43,8 @@ export default function Form() {
   const isDisabled =
     form.username === "" ||
     form.email === "" ||
-    (form.password === "" && !isError);
+    (form.password === "" && !isError) ||
+    form.confirmPassword === "";
 
   return (
     <form className="grid gap-2">
@@ -64,6 +69,17 @@ export default function Form() {
         value={form.password}
         onChange={(e) => setForm({ ...form, password: e.target.value })}
         isError={passwordValidation(form.password, isError)}
+      />
+      <Input
+        type="password"
+        placeholder="Confirm Password"
+        value={form.confirmPassword}
+        onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
+        isError={confirmPasswordValidation(
+          form.password,
+          form.confirmPassword,
+          isError,
+        )}
       />
       <button
         onClick={handleSubmit}

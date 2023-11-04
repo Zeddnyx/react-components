@@ -8,7 +8,7 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
   };
 
   return (
-    <div className="dropdown  group">
+    <div className="dropdown group">
       <button className="dropdown-btn">
         <p>{select}</p>
         <span className="group-hover:rotate-180 animate">
@@ -16,7 +16,7 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
         </span>
       </button>
 
-      <div className="dropdown-content opacity-0 group-hover:opacity-100">
+      <div className="dropdown-content max-h-40 invisible group-hover:visible animate group-hover:animate">
         {data.map((item) => (
           <div
             key={item.name}

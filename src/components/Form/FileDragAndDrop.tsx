@@ -8,8 +8,9 @@ export default function DropFile({
   multiple = true,
   acceptType,
   maxSize,
+  file,
+  setFile,
 }: IFileDrag) {
-  const [file, setFile] = useState<File[]>([]);
   const [isError, setIsError] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
 

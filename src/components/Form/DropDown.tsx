@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IDropdown } from "types/form";
 
@@ -11,26 +11,32 @@ function Dropdown({ data, select, setSelect }: IDropdown) {
   };
   return (
     <div className="dropdown">
-      <button type="button" onClick={() => setIsActive(!isActive)} className="dropdown-btn">
+      <button
+        type="button"
+        onClick={() => setIsActive(!isActive)}
+        className="dropdown-btn"
+      >
         <p>{select}</p>
         <span className={isActive ? "dropdown-active animate" : "animate"}>
           <MdOutlineKeyboardArrowDown />
         </span>
       </button>
-      {isActive && (
-        <div className="dropdown-content">
-          {data.map((item) => (
-            <div
-              key={item.name}
-              className="dropdown-item"
-              onClick={() => handeSelect(item.name)}
-            >
-              <p>{item.name}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      <div
+        className={`dropdown-content ${
+          isActive ? "max-h-40 animate" : "max-h-0 !invisible animate"
+        }`}
+      >
+        {data.map((item) => (
+          <div
+            key={item.name}
+            className="dropdown-item"
+            onClick={() => handeSelect(item.name)}
+          >
+            <p>{item.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-export default memo(Dropdown);
+export default Dropdown;
