@@ -4,5 +4,15 @@ import { data } from "data/dummyData";
 
 export default function DropDownSection() {
   const [select, setSelect] = useState("select");
-  return <Dropdown data={data} select={select} setSelect={setSelect} />;
+  const handleChange = (e: string) => {
+    setSelect(e);
+  };
+  return (
+    <Dropdown
+      data={data}
+      select={select}
+      setSelect={setSelect}
+      onChange={handleChange}
+    />
+  );
 }

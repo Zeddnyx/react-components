@@ -2,11 +2,12 @@ import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IDropdown } from "types/form";
 
-function Dropdown({ data, select, setSelect }: IDropdown) {
+function Dropdown({ data, select, setSelect, onChange }: IDropdown) {
   const [isActive, setIsActive] = useState(false);
 
   const handeSelect = (e: string) => {
     setSelect(e);
+    onChange(e);
     setIsActive(false);
   };
   return (

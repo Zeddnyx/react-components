@@ -2,9 +2,10 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import { IDropdown } from "types/form";
 
-function Dropdown({ data, select, setSelect }: IDropdown) {
+function Dropdown({ data, select, setSelect,onChange }: IDropdown) {
   const handeSelect = (e: string) => {
     setSelect(e);
+    onChange(e);
   };
 
   return (

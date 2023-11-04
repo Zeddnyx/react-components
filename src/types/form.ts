@@ -22,6 +22,7 @@ export interface IDropdown {
   }[];
   select: string;
   setSelect: React.Dispatch<React.SetStateAction<string>>;
+  onChange: (e: string) => void;
 }
 
 export interface IFileDrag {
