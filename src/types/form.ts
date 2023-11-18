@@ -1,10 +1,10 @@
 export interface IInput {
-  type: string;
+  type?: string;
   placeholder: string;
   label?: string;
   name?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string|number;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   logo?: string;

@@ -7,7 +7,7 @@ export default function Index(props: ICard) {
       <img
         src={image}
         alt={title}
-        className="rounded-t-md rounded-b-none w-full h-60"
+        className="rounded-t-md rounded-b-none w-full h-40 md:h-52"
       />
       <div className="p-2 flex flex-col gap-2">
         <h3 className="line-clamp-2">{title}</h3>

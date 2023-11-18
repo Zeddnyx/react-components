@@ -4,7 +4,7 @@ import Pagination from "pages/paginations";
 import Slider from "pages/slider";
 import Form from "pages/form";
 import DnD from "pages/dnd";
-import Card from "pages/card";
+import Random from "pages/random";
 
 //* icons
 import { MdAnimation } from "react-icons/md";
@@ -59,10 +59,10 @@ export const data = [
     icons: SiPowerpages,
   },
   {
-    title: "Card",
-    slug: "/card",
+    title: "Random",
+    slug: "/random",
     image: "",
-    element: Card,
+    element: Random,
     icons: BsCardHeading,
   }
 ];

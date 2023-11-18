@@ -1,4 +1,4 @@
-import { data } from "data/list-card";
+import { data } from "data/list-random";
 import Sidebar from "components/Sidebar";
 import Title from "~/components/Title";
 

@@ -1,0 +1,7 @@
+.step {
+  @apply h-1 w-full
+}
+
+.btn-blue {
+  @apply bg-blue rounded text-white p-2
+}

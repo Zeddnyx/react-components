@@ -9,6 +9,7 @@ import "pages/slider/styles.css"
 import "pages/modal/styles.css"
 import "pages/paginations/styles.css"
 import "pages/form/styles.css"
+import "pages/random/styles.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
