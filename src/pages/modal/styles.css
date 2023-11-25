@@ -8,13 +8,16 @@
 
 /* Modal section */
 .container-modal {
-  @apply fixed inset-0 z-50 flex justify-center items-center
+  @apply fixed inset-0 z-50 flex justify-center items-end md:items-center
 }
 .modal-active {
   @apply bg-gray bg-opacity-50
 }
 .modal-content {
-  @apply bg-gray_cool text-gray shadow-lg w-1/3 rounded-lg p-3 z-50
+  @apply bg-gray_cool text-gray shadow-lg w-full md:w-1/3 h-[40vw] md:h-[20vw] rounded-lg p-3 z-50 flex flex-col justify-between
+}
+.modal-content-mobile {
+  @apply bg-gray_cool text-gray shadow-lg  rounded-lg p-3 z-50 block md:hidden
 }
 .modal-close {
   @apply px-4 py-2 rounded-lg bg-gray text-gray_cool hover:bg-red

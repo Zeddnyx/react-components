@@ -1,3 +1,5 @@
+import { zoomInAnimate,slideInupAnimate} from "pages/animations/components/Animations";
+
 interface IModal {
   isModal: boolean;
   setIsModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,7 +28,7 @@ const Modal = ({ isModal, setIsModal }: IModal) => {
 
       {/* Modal Content */}
       {isModal && (
-        <div className="modal-content">
+        <div className="modal-content" style={slideInupAnimate("100ms")}>
           <p>Modal is active</p>
 
           <div className="flexCenterCenter mt-5">

@@ -1,15 +1,22 @@
 import { memo } from "react";
+import { slideInDownAnimate } from "pages/animations/components/Animations";
 
 interface INotify {
   message: string;
-  bg?: string;
+  className?: string;
   color?: string;
 }
 
-function Notify({ message, bg = "#3e3e3e", color = "#fff" }: INotify) {
+function Notify({
+  message,
+  className = "bg-[#3e3e3e]",
+  color = "#fff",
+}: INotify) {
   return (
-    <div className="notify" style={{ background: bg }}>
-      <p style={{ color }}>{message}</p>
+    <div className={`notify ${className}`} style={slideInDownAnimate("100ms")}>
+      <div>
+        <p style={{ color }}>{message}</p>
+      </div>
     </div>
   );
 }
