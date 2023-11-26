@@ -7,6 +7,7 @@ import FormDropdownHover from "pages/form/components/form-dropdown-hover";
 import FormDynamicAdd from "pages/form/components/form-dynamic-add";
 import FormInputTag from "pages/form/components/form-input-tag";
 import FormInputOtp from "pages/form/components/form-otp";
+import FormInputSearch from "pages/form/components/form-search-suggest";
 
 export const data = [
   {
@@ -53,5 +54,10 @@ export const data = [
     title: "Form Input otp",
     id: "form-input-otp",
     element: FormInputOtp,
+  },
+  {
+    title: "Form Search Suggest",
+    id: "form-search-suggest",
+    element: FormInputSearch,
   },
 ];
