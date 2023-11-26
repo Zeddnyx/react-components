@@ -142,7 +142,7 @@ td {
   @apply px-5 grid gap-5 w-full;
 }
 .children-item {
-  @apply border-b border-gray py-10 mb-5 grid gap-3 capitalize;
+  @apply border-b border-gray pb-10 grid gap-3 h-full capitalize
 }
 
 /* Components input section */

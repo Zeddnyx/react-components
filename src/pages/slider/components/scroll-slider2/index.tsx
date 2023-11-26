@@ -22,12 +22,12 @@ export default function Slider() {
   };
 
   return (
-    <div className="container-slider">
+    <div className="container-slider !h-96">
       {/* main slider */}
       <div className="slider">
         {pages?.map((item) => (
-          <div className="flex gap-5">
-            <div className="w-[800px] h-52 ">
+          <div className="flex gap-5 flex-col md:flex-row">
+            <div className="w-full md:w-1/2 h-52 ">
               <img
                 src={item.image}
                 alt="image slider"
@@ -35,19 +35,15 @@ export default function Slider() {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="flex flex-col gap-5 justify-between">
+            <div className="flex flex-col gap-5 justify-between w-full md:w-1/2">
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-                  reprehenderit Lorem ipsum dolor sit amet, officia excepteur ex
-                  fugiat reprehenderit Lorem ipsum dolor sit amet, officia
-                  excepteur ex fugiat reprehenderit Lorem ipsum dolor sit amet,
-                  officia excepteur ex fugiat reprehenderit
+                  {item.description}
                 </p>
               </div>
               <div className="flexBetweenCenter">
                 {/* slider current page */}
-                <div className="flex items-center gap-2">
+                <div className="md:flex items-center gap-2 hidden">
                   {Array.from({ length: totalPages }, (_, index) => (
                     <button
                       key={index}
@@ -61,7 +57,7 @@ export default function Slider() {
                   ))}
                 </div>
                 {/* slider button action */}
-                <div className="flex items-center gap-5">
+                <div className="md:flex items-center gap-3 hidden">
                   <button
                     disabled={currentPage === 1}
                     onClick={() => handlePageChange(currentPage - 1)}
@@ -87,6 +83,19 @@ export default function Slider() {
                   </button>
                 </div>
               </div>
+            </div>
+            <div className="flex justify-center items-center gap-2 md:hidden">
+              {Array.from({ length: totalPages }, (_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handlePageChange(index + 1)}
+                  className={
+                    currentPage === index + 1
+                      ? "slider-current-active"
+                      : "slider-current-inActive !bg-[#d5d5d5]"
+                  }
+                ></button>
+              ))}
             </div>
           </div>
         ))}
