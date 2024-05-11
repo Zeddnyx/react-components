@@ -7,9 +7,15 @@ export default function DropDownSection() {
   const handleChange = (e: string) => {
     setSelect(e);
   };
+  const opt = data.map((item) => {
+    return {
+      label: item.name,
+      value: item.name,
+    };
+  });
   return (
     <DropdownHover
-      data={data}
+      options={opt}
       select={select}
       setSelect={setSelect}
       onChange={handleChange}

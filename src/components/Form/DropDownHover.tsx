@@ -2,7 +2,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import { IDropdown } from "types/form";
 
-function Dropdown({ data, select, setSelect,onChange }: IDropdown) {
+function Dropdown({ options, select, setSelect,onChange }: IDropdown) {
   const handeSelect = (e: string) => {
     setSelect(e);
     onChange(e);
@@ -18,13 +18,13 @@ function Dropdown({ data, select, setSelect,onChange }: IDropdown) {
       </button>
 
       <div className="dropdown-content max-h-40 invisible group-hover:visible animate group-hover:animate">
-        {data.map((item) => (
+        {options?.map((item) => (
           <div
-            key={item.name}
+            key={item.label}
             className="dropdown-item"
-            onClick={() => handeSelect(item.name)}
+            onClick={() => handeSelect(item.label)}
           >
-            <p>{item.name}</p>
+            <p>{item.label}</p>
           </div>
         ))}
       </div>

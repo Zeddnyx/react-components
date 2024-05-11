@@ -15,10 +15,10 @@ export interface IInput {
 }
 
 export interface IDropdown {
-  data: {
+  options: {
     id?: number;
     value: string;
-    name: string;
+    label: string;
   }[];
   select: string;
   setSelect: React.Dispatch<React.SetStateAction<string>>;

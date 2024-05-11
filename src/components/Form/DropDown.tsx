@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IDropdown } from "types/form";
 
-function Dropdown({ data, select, setSelect, onChange }: IDropdown) {
+function Dropdown({ options: data, select, setSelect, onChange }: IDropdown) {
   const [isActive, setIsActive] = useState(false);
 
   const handeSelect = (e: string) => {
@@ -24,16 +24,16 @@ function Dropdown({ data, select, setSelect, onChange }: IDropdown) {
       </button>
       <div
         className={`dropdown-content ${
-          isActive ? "max-h-40 animate" : "max-h-0 !invisible animate"
+          isActive ? "max-h-40 animate" : "max-h-0 !invisible"
         }`}
       >
         {data.map((item) => (
           <div
-            key={item.name}
+            key={item.label}
             className="dropdown-item"
-            onClick={() => handeSelect(item.name)}
+            onClick={() => handeSelect(item.label)}
           >
-            <p>{item.name}</p>
+            <p>{item.label}</p>
           </div>
         ))}
       </div>
