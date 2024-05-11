@@ -39,12 +39,12 @@ export default function InputTag() {
   };
 
   return (
-    <div>
+    <div className="flex items-center bg-gray_alt rounded-md">
       <div className="flex gap-2">
         {tag?.map((item, index) => (
-          <div className="btn p-2 flex gap-5 select-none" key={index}>
+          <button className="p-2 px-3 flex gap-5 select-none text-sm bg-gray rounded-full"  key={index}>
             {item} <span onClick={() => handleDelete(index)}>x</span>
-          </div>
+          </button>
         ))}
       </div>
       <Input

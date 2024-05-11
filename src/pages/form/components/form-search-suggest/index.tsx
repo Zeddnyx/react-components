@@ -8,17 +8,28 @@ import { getDataNormal } from "~/utils/fetch";
 export default function Index() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [clickedSuggestion, setClickedSuggestion] = useState(false);
   const searchKey = useDebounce(search, 500);
 
   useEffect(() => {
-    searchKey != "" &&
-      getDataNormal(
-        `https://dummyjson.com/products/search?q=${searchKey}`,
-      ).then((res) => {
+    if (search === "") {
+      setIsOpen(false);
+      setClickedSuggestion(false);
+      setData([]);
+      return;
+    }
+
+    if (!clickedSuggestion) {
+      setIsOpen(true);
+    }
+
+    getDataNormal(`https://dummyjson.com/products/search?q=${searchKey}`).then(
+      (res) => {
         setData(res.products);
-      });
-  }, [searchKey]);
+      },
+    );
+  }, [searchKey, clickedSuggestion]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -32,11 +43,17 @@ export default function Index() {
           value={search}
           type="text"
           placeholder="Search"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setClickedSuggestion(false);
+          }}
         />
       </form>
       <div className="h-28 py-4">
         <div className="overflow-y-auto h-full">
+          {isOpen && data.length === 0 && (
+            <div className="text-center">No data</div>
+          )}
           {isOpen &&
             data?.map((item: any) => (
               <div
@@ -45,6 +62,7 @@ export default function Index() {
                 onClick={() => {
                   setSearch(item.title);
                   setIsOpen(false);
+                  setClickedSuggestion(true);
                 }}
               >
                 {item.title}

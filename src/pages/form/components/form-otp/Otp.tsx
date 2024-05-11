@@ -30,7 +30,7 @@ export default function Otp({ length, onChange }: IOtp) {
   };
 
   useEffect(() => {
-//     inputRef.current?.focus(); // uncomment this to auto focus when first render
+     inputRef.current?.focus(); 
   }, [isIndex]);
 
   return (

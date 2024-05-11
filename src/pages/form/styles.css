@@ -20,7 +20,7 @@
   @apply w-full h-10 flex justify-between rounded-md mb-2 bg-gray text-white px-2;
 }
 .dropdown-content {
-  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 overflow-y-auto;
+  @apply bg-gray p-3 px-4 rounded-md text-[#fff] grid gap-2 overflow-y-auto z-20 absolute w-full
 }
 .dropdown-item {
   @apply cursor-pointer;
